@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour {
 
 	//stats
 
-
 	// setter sets the default value
 	// if only need to temporarily change the speed, use the ApplySpeedModifier() method
 	public float speed {
@@ -31,8 +30,8 @@ public class PlayerController : MonoBehaviour {
 	private float _firerate = 5f;
 	private float defaultFirerate;
 	[SerializeField]
-	private float manualMaxFirerate = 6f;
-	private float fireTimer = 0;
+	private float manualMaxFirerate = 6f; //firerate when shooting manually(pressing and releasing button repeatedly)
+	private float fireTimer = 0; //shooting cooldown timer
 
 
 	public int health {
@@ -45,23 +44,24 @@ public class PlayerController : MonoBehaviour {
 	private int _health = 5;
 	private int defaultHealth;
 
-	//other
+
+	//other stuff
 
 	[Header("Other:")]
 	public Camera cameraReference;
 	public Transform healthBar;
 	public Transform weaponSlot;
 
+
 	//methods
 
-	//set default values here
 	public void Init(){
 		defaultSpeed = _speed;
 		defaultFirerate = _firerate;
 		defaultHealth = _health;
 	}
 
-	// changes speed of the player for a given amount of time(given in seconds)
+	// changes the speed of the player for a given amount of time(given in seconds)
 	public void ApplySpeedModifier (float modifier, float duration){
 		_speed = _speed * modifier;
 		StartCoroutine (RevertSpeedModifier (modifier, duration));
@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour {
 		_speed = _speed / modifier;
 	}
 
+	// changes the firerate at which the weapon fires for a given amount of time(given in seconds)
 	public void ApplyFirerateModifier (float modifier, float duration){
 		_firerate = _firerate * modifier;
 		StartCoroutine (RevertFirerateModifier (modifier, duration));
@@ -82,24 +83,24 @@ public class PlayerController : MonoBehaviour {
 		_firerate = _firerate / modifier;
 	}
 
+
 	private void Shoot(){
 		weaponSlot.GetChild (0).GetComponent<WeaponScript> ().Shoot ();
 	}
 
+
+	// makes sure the player won't fly out of the screen
 	private void SetMovementVariables(ref float translationX, ref float translationY){
 		translationY = Input.GetAxis ("Vertical") * speed;
 		translationX = Input.GetAxis ("Horizontal") * speed;
 
-		//optimise this shit
-		float upBoundary = cameraReference.orthographicSize;
-		float downBoundary = -upBoundary;
-		float rightBoundary = upBoundary * cameraReference.aspect;
-		float leftBoundary = -rightBoundary;
+		float yBoundary = cameraReference.orthographicSize;
+		float xBoundary = yBoundary * cameraReference.aspect;
 
-		if ((transform.localPosition.x > rightBoundary && translationX > 0) || (transform.localPosition.x < leftBoundary && translationX < 0)) {
+		if ((transform.localPosition.x > xBoundary && translationX > 0) || (transform.localPosition.x < -xBoundary && translationX < 0)) {
 			translationX = 0;
 		}
-		if ((transform.localPosition.y > upBoundary && translationY > 0) || (transform.localPosition.y < downBoundary && translationY < 0)) {
+		if ((transform.localPosition.y > yBoundary && translationY > 0) || (transform.localPosition.y < -yBoundary && translationY < 0)) {
 			translationY = 0;
 		}
 
@@ -115,12 +116,6 @@ public class PlayerController : MonoBehaviour {
 		Debug.Log ("out" + collider);
 	}
 
-	//use this for initialization
-	void Start () {
-
-	}
-	
-	//update is called once per frame
 	void Update () {
 		
 		//movement
@@ -130,25 +125,17 @@ public class PlayerController : MonoBehaviour {
 		GetComponent<Rigidbody2D> ().velocity = new Vector2 (translationX * 100, translationY * 100);
 
 		//shooting
-
-
+		//fires automatically if spacebar is held
 		if (Input.GetKey ("space") && Time.time > fireTimer) {
 			fireTimer = Time.time + 1 / firerate;
 			Shoot ();
 		}
+		//when the spacebar is released, sets a small cooldown to avoid spamming the projectiles
 		if (Input.GetKeyUp ("space")) {
 			fireTimer += (1 / manualMaxFirerate - 1 / firerate);
 		}
 
 
-
-
-		//if(Input.GetKeyDown("space")){
-		//	InvokeRepeating ("Shoot", 0.001f, 1 / firerate);
-		//}
-		//if (Input.GetKeyUp("space")) {
-		//	CancelInvoke ();
-		//}
 
 
 	}

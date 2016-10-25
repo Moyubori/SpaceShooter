@@ -3,7 +3,10 @@ using System.Collections;
 
 public class ManageIcons : MonoBehaviour {
 
-	private Transform[] icons = new Transform[5];
+	private int iconQuantity = 5;
+
+	private Transform[] icons;
+
 
 	public void SetHealth(int health){
 		for (int i = 0; i < health; i++) {
@@ -14,15 +17,12 @@ public class ManageIcons : MonoBehaviour {
 		}
 	}
 
-	// Use this for initialization
+
 	void Start () {
-		for (int i = 0; i < 5; i++) {
+		icons = new Transform[iconQuantity];
+
+		for (int i = 0; i < iconQuantity; i++) {
 			icons [i] = transform.GetChild (i);
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }
