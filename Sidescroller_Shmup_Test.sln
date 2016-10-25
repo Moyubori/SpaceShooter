@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{F5A820F5-7724-BCD9-6ECB-D189C6703F46}") = "Sidescroller_Shmup_Test", "Assembly-CSharp.csproj", "{66EB40C8-2106-8794-E3FB-7D3F580C1248}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66EB40C8-2106-8794-E3FB-7D3F580C1248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66EB40C8-2106-8794-E3FB-7D3F580C1248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66EB40C8-2106-8794-E3FB-7D3F580C1248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66EB40C8-2106-8794-E3FB-7D3F580C1248}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
