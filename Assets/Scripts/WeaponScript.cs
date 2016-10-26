@@ -12,22 +12,41 @@ public class WeaponScript : MonoBehaviour {
 	public void Shoot (){
 		switch(weaponLevel){
 		case 0:
-			Instantiate (projectilePrefab, projectileOrigin.position, projectileOrigin.rotation);
+			createProjectile(projectileOrigin.rotation);
 			break;
 
 		case 1:
-			Instantiate (projectilePrefab, projectileOrigin.position, projectileOrigin.rotation);
-			Instantiate (projectilePrefab, projectileOrigin.position, Quaternion.Euler(0,0,7));
-			Instantiate (projectilePrefab, projectileOrigin.position, Quaternion.Euler(0,0,-7));
+			createProjectile(projectileOrigin.rotation);
+			createProjectile(Quaternion.Euler(0,0,7));
+			createProjectile(Quaternion.Euler(0,0,-7));
 			break;
 
 		case 2:
-			Instantiate (projectilePrefab, projectileOrigin.position, projectileOrigin.rotation);
-			Instantiate (projectilePrefab, projectileOrigin.position, Quaternion.Euler (0, 0, 7));
-			Instantiate (projectilePrefab, projectileOrigin.position, Quaternion.Euler (0, 0, -7));
-			Instantiate (projectilePrefab, projectileOrigin.position, Quaternion.Euler (0, 0, 14));
-			Instantiate (projectilePrefab, projectileOrigin.position, Quaternion.Euler (0, 0, -14));
+			createProjectile(projectileOrigin.rotation);
+			createProjectile(Quaternion.Euler (0, 0, 7));
+			createProjectile(Quaternion.Euler (0, 0, -7));
+			createProjectile(Quaternion.Euler (0, 0, 14));
+			createProjectile(Quaternion.Euler (0, 0, -14));
 			break;
 		}
+	}
+
+	void createProjectile(Quaternion quaternion) {
+		Transform projectile = getProjectileInstance ();
+		projectile.position = projectileOrigin.position;
+		projectile.rotation = quaternion;
+	}
+
+	//seeks for existing inactive projectile instance or creates new one
+	Transform getProjectileInstance() {
+		//projectiles located inside weapon object. That means multiple pools in the future. Change this to some global location?
+		foreach(Transform child in transform) {
+			if (!child.gameObject.activeSelf) {
+				child.gameObject.SetActive (true);
+				return child;
+			}
+		}
+
+		return (Transform) Instantiate (projectilePrefab.transform, transform);
 	}
 }

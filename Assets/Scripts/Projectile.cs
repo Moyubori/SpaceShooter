@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour {
 		float yBoundary = Camera.main.orthographicSize;
 
 		if (transform.position.x > xBoundary || transform.position.x < -xBoundary || transform.position.y > yBoundary || transform.position.y < -yBoundary) {
-			Destroy (gameObject);
+			gameObject.SetActive (false);
 		}
 	}
 		
