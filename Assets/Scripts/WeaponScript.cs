@@ -12,33 +12,33 @@ public class WeaponScript : MonoBehaviour {
 	public void Shoot (){
 		switch(weaponLevel){
 		case 0:
-			createProjectile(projectileOrigin.rotation);
+			CreateProjectile(projectileOrigin.rotation);
 			break;
 
 		case 1:
-			createProjectile(projectileOrigin.rotation);
-			createProjectile(Quaternion.Euler(0,0,7));
-			createProjectile(Quaternion.Euler(0,0,-7));
+			CreateProjectile(projectileOrigin.rotation);
+			CreateProjectile(Quaternion.Euler(0,0,7));
+			CreateProjectile(Quaternion.Euler(0,0,-7));
 			break;
 
 		case 2:
-			createProjectile(projectileOrigin.rotation);
-			createProjectile(Quaternion.Euler (0, 0, 7));
-			createProjectile(Quaternion.Euler (0, 0, -7));
-			createProjectile(Quaternion.Euler (0, 0, 14));
-			createProjectile(Quaternion.Euler (0, 0, -14));
+			CreateProjectile(projectileOrigin.rotation);
+			CreateProjectile(Quaternion.Euler (0, 0, 7));
+			CreateProjectile(Quaternion.Euler (0, 0, -7));
+			CreateProjectile(Quaternion.Euler (0, 0, 14));
+			CreateProjectile(Quaternion.Euler (0, 0, -14));
 			break;
 		}
 	}
 
-	void createProjectile(Quaternion quaternion) {
-		Transform projectile = getProjectileInstance ();
+	void CreateProjectile(Quaternion direction) {
+		Transform projectile = GetProjectileInstance ();
 		projectile.position = projectileOrigin.position;
-		projectile.rotation = quaternion;
+		projectile.rotation = direction;
 	}
 
 	//seeks for existing inactive projectile instance or creates new one
-	Transform getProjectileInstance() {
+	Transform GetProjectileInstance() {
 		//projectiles located inside weapon object. That means multiple pools in the future. Change this to some global location?
 		foreach(Transform child in transform) {
 			if (!child.gameObject.activeSelf) {

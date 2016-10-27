@@ -136,8 +136,5 @@ public class PlayerController : MonoBehaviour {
 			fireTimer += (1 / manualMaxFirerate - 1 / firerate);
 		}
 
-
-
-
 	}
 }
