@@ -46,7 +46,6 @@ public class WeaponScript : MonoBehaviour {
 				return child;
 			}
 		}
-
 		return (Transform) Instantiate (projectilePrefab.transform, transform);
 	}
 }

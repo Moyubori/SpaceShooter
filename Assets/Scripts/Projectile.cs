@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour {
 	}
 
 	void Start() {
-		Debug.Log (transform.right);
+		//Debug.Log (transform.right);
 	}
 
 	void Update () {

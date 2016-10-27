@@ -14,11 +14,11 @@ public class ManageIcons : MonoBehaviour {
 		}
 	}
 
-	public void SetHealth(int health){
-		for (int i = 0; i < health; i++) {
+	public void SetLives(int lives){
+		for (int i = 0; i < lives; i++) {
 			icons [i].gameObject.SetActive (true);
 		}
-		for (int i = health; i < 5; i++) {
+		for (int i = lives; i < 5; i++) {
 			icons [i].gameObject.SetActive (false);
 		}
 	}

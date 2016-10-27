@@ -34,15 +34,26 @@ public class PlayerController : MonoBehaviour {
 	private float fireTimer = 0; //shooting cooldown timer
 
 
-	public int health {
+	public float health {
 		get { return _health; }
 		set { _health = value;
 			defaultHealth = value; }
 	}
 
 	[SerializeField]
-	private int _health = 5;
-	private int defaultHealth;
+	private float _health = 1;
+	private float defaultHealth;
+
+
+	public int lives {
+		get { return _lives; }
+		set { _lives = value;
+			defaultLives = value; }
+	}
+
+	[SerializeField]
+	private int _lives = 5;
+	private int defaultLives;
 
 
 	//other stuff
@@ -50,15 +61,17 @@ public class PlayerController : MonoBehaviour {
 	[Header("Other:")]
 	public Camera cameraReference;
 	public Transform healthBar;
+	public Transform livesIcons;
 	public Transform weaponSlot;
 
 
 	//methods
 
-	public void Init(){
+	void Awake(){
 		defaultSpeed = _speed;
 		defaultFirerate = _firerate;
 		defaultHealth = _health;
+		defaultLives = _lives;
 	}
 
 	// changes the speed of the player for a given amount of time(given in seconds)
@@ -81,6 +94,15 @@ public class PlayerController : MonoBehaviour {
 	IEnumerator RevertFirerateModifier (float modifier, float duration){
 		yield return new WaitForSeconds (duration);
 		_firerate = _firerate / modifier;
+	}
+
+	// damage should be given as a float between 0 and 1
+	public void DamagePlayer(float damage){
+		if (damage > health) {
+			_health = 0;
+		} else {
+			_health -= damage;
+		}
 	}
 
 
@@ -135,6 +157,6 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyUp ("space")) {
 			fireTimer += (1 / manualMaxFirerate - 1 / firerate);
 		}
-
+			
 	}
 }
