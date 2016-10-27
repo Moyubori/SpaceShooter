@@ -63,17 +63,24 @@ public class PlayerController : MonoBehaviour {
 
 	// changes the speed of the player for a given amount of time(given in seconds)
 	public void ApplySpeedModifier (float modifier, float duration){
-	_speed = _speed * modifier;
-	StartCoroutine (RevertFieldModifier (ref _speed, modifier, duration));
-}
+		_speed = _speed * modifier;
+		StartCoroutine (RevertSpeedModifier (modifier, duration));
+	}
 
+	IEnumerator RevertSpeedModifier (float modifier, float duration){
+		yield return new WaitForSeconds (duration);
+		_speed = _speed / modifier;
+	}
+
+	// changes the firerate at which the weapon fires for a given amount of time(given in seconds)
 	public void ApplyFirerateModifier (float modifier, float duration){
 		_firerate = _firerate * modifier;
-		StartCoroutine (RevertFieldModifier (ref _firerate, modifier, duration));
-	}	
-			
-	IEnumerator RevertFieldModifier (ref float field, float modifier, float duration, ){
+		StartCoroutine (RevertFirerateModifier (modifier, duration));
+	}
+
+	IEnumerator RevertFirerateModifier (float modifier, float duration){
 		yield return new WaitForSeconds (duration);
+		_firerate = _firerate / modifier;
 	}
 
 
