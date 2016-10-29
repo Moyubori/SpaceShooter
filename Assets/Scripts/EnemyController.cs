@@ -1,24 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyController : MonoBehaviour {
+public class EnemyController : EnemyClass {
 
-	public float health {
-		get { return _health; }
-		set { _health = value;
-			defaultHealth = value; }
-	}
-
-	[SerializeField]
-	private float _health = 1;
-	private float defaultHealth;
-
-	public Transform weaponSlot;
-
-
-	//methods
-
-	public void TakeDamage(float damage){
+	public void TakeDamage (float damage){
 		if (damage > health) {
 			health = 0;
 			gameObject.SetActive (false);
@@ -28,7 +13,11 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){
-		TakeDamage (collider.GetComponent<Projectile>().damage);
-		collider.gameObject.SetActive (false);
+		// check if collision should deal damage
+		if (collider.tag == "Projectiles") {
+			TakeDamage (collider.GetComponent<Projectile> ().damage);
+			collider.gameObject.SetActive (false);
+		}
 	}
+
 }
