@@ -97,12 +97,13 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	// damage should be given as a float between 0 and 1
-	public void DamagePlayer(float damage){
+	public void TakeDamage(float damage){
 		if (damage > health) {
 			_health = 0;
 		} else {
 			_health -= damage;
 		}
+		healthBar.GetComponent<ManageHealthbar> ().SetHealth(health);
 	}
 
 
@@ -129,14 +130,12 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter2D(Collision2D collisionInfo){
-		string collider = collisionInfo.collider.gameObject.name;
-		Debug.Log ("in" + collider);
-	}
-
-	void OnCollisionExit2D(Collision2D collisionInfo){
-		string collider = collisionInfo.collider.gameObject.name;
-		Debug.Log ("out" + collider);
+	void OnTriggerEnter2D(Collider2D collider){
+		// check if collision should deal damage
+		if (collider.tag == "ProjectilesEnemy") {
+			TakeDamage (collider.GetComponent<Projectile> ().damage);
+			collider.gameObject.SetActive (false);
+		}
 	}
 
 	void Update () {
@@ -157,6 +156,5 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyUp ("space")) {
 			fireTimer += (1 / manualMaxFirerate - 1 / firerate);
 		}
-			
 	}
 }

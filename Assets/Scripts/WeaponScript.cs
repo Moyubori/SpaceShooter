@@ -1,15 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WeaponScript : MonoBehaviour {
+public class WeaponScript : WeaponClass {
 
-	public Transform projectilePrefab;
-	public Transform projectileOrigin;
-
-	[SerializeField]
-	private int weaponLevel = 0;
-
-	public void Shoot (){
+	override public void Shoot (){
 		switch(weaponLevel){
 		case 0:
 			CreateProjectile(projectileOrigin.rotation);
@@ -17,16 +11,16 @@ public class WeaponScript : MonoBehaviour {
 
 		case 1:
 			CreateProjectile(projectileOrigin.rotation);
-			CreateProjectile(Quaternion.Euler(0,0,7));
-			CreateProjectile(Quaternion.Euler(0,0,-7));
+			CreateProjectile(projectileOrigin.rotation * Quaternion.Euler(0,0,7));
+			CreateProjectile(projectileOrigin.rotation * Quaternion.Euler(0,0,-7));
 			break;
 
 		case 2:
 			CreateProjectile(projectileOrigin.rotation);
-			CreateProjectile(Quaternion.Euler (0, 0, 7));
-			CreateProjectile(Quaternion.Euler (0, 0, -7));
-			CreateProjectile(Quaternion.Euler (0, 0, 14));
-			CreateProjectile(Quaternion.Euler (0, 0, -14));
+			CreateProjectile(projectileOrigin.rotation * Quaternion.Euler (0, 0, 7));
+			CreateProjectile(projectileOrigin.rotation * Quaternion.Euler (0, 0, -7));
+			CreateProjectile(projectileOrigin.rotation * Quaternion.Euler (0, 0, 14));
+			CreateProjectile(projectileOrigin.rotation * Quaternion.Euler (0, 0, -14));
 			break;
 		}
 	}

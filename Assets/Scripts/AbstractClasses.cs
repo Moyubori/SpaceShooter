@@ -19,14 +19,7 @@ public abstract class EnemyClass : MonoBehaviour {
 
 	//methods
 
-	public void TakeDamage(float damage){
-		if (damage > health) {
-			health = 0;
-			gameObject.SetActive (false);
-		} else {
-			health -= damage;
-		}
-	}
+	public abstract void TakeDamage (float damage);
 }
 
 public abstract class WeaponClass : MonoBehaviour {
@@ -39,3 +32,6 @@ public abstract class WeaponClass : MonoBehaviour {
 
 	public abstract void Shoot ();
 }
+
+// TODO: Create a separate projectilePool object for projectiles
+// 		 The projectiles that are active, dissappear when the enemy ship is disabled
