@@ -3,8 +3,19 @@ using System.Collections;
 
 public class EnemyController : EnemyClass {
 
-	public float firerate = 0.5f;
-	private float weaponCooldown = 0;
+	//shots fired per second
+	public float firerate {
+		get { return _firerate; }
+		set { _firerate = value;
+			defaultFirerate = value; }
+	}
+
+	[SerializeField]
+	private float _firerate = 0.5f;
+	private float defaultFirerate;
+	[SerializeField]
+	private float manualMaxFirerate = 6f; //firerate when shooting manually(pressing and releasing button repeatedly)
+	private float fireTimer = 0; //shooting cooldown timer
 
 	public WeaponClass weapon;
 
@@ -27,10 +38,10 @@ public class EnemyController : EnemyClass {
 
 	
 	void Update (){
-		weaponCooldown += Time.deltaTime;
-		if (weaponCooldown >= 1/firerate) {
+		fireTimer += Time.deltaTime;
+		if (fireTimer >= 1 / firerate) {
 			weapon.Shoot ();
-			weaponCooldown = 0;
+			fireTimer = 0;
 		}
 	}
 }
