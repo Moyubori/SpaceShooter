@@ -24,7 +24,7 @@ public abstract class EnemyClass : MonoBehaviour {
 
 public abstract class WeaponClass : MonoBehaviour {
 
-	public Transform projectilePrefab;
+	public ObjectPool projectilePool;
 	public Transform projectileOrigin;
 
 	[SerializeField]
@@ -32,6 +32,3 @@ public abstract class WeaponClass : MonoBehaviour {
 
 	public abstract void Shoot ();
 }
-
-// TODO: Create a separate projectilePool object for projectiles
-// 		 The projectiles that are active, dissappear when the enemy ship is disabled
