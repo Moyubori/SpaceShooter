@@ -2,34 +2,35 @@
 using System.Collections;
 
 public class BackgroundController : MonoBehaviour {
-	public ObjectPool pool;
-	public Sprite[] sprites;
 	public Camera camera;
-	public float scrollRate;
-	public float spawnRate;
 
-	void Start() {
-		InvokeRepeating ("CreateObject", 0, spawnRate);
+	Vector3 previousPosition;
+
+	void Start () {
+		previousPosition = camera.transform.position;
 	}
 
-	private void CreateObject() {
-		Transform obj = pool.GetInstance ();
+	void Update () {
+		Vector3 cameraPosition = camera.transform.position;
+		float cameraOffset = cameraPosition.x - previousPosition.x;
 
-		SpriteRenderer spriteRenderer = obj.gameObject.GetComponent<SpriteRenderer> ();
-		spriteRenderer.sprite = sprites [Random.Range (0, sprites.Length)];
+		if (cameraOffset != 0) {
+			foreach (Transform child in transform) {
+				if (child.gameObject.activeSelf) {
+					//objects move with camera
+					Vector3 pos = child.position;
+					pos.x += cameraOffset;
 
-		BackgroundScroller scroller = obj.gameObject.GetComponent<BackgroundScroller> ();
-		scroller.scrollRate = scrollRate;
-		scroller.camera = camera;
+					//parallax is inversely proportional to zDistance. It's not mathematically accurate,
+					//but monotonicity is correct
+					float zDistance = Mathf.Abs (child.position.z - camera.transform.position.z);
+					float parallax = cameraOffset / zDistance;
+					pos.x -= parallax;
 
-		Vector3 position = new Vector3 ();
-		position.x = camera.orthographicSize * camera.aspect;
-
-		float random = (Random.value - 0.5f);
-		position.y = random * camera.orthographicSize;
-
-		Debug.Log (random+" * " + camera.orthographicSize + " = " + position.y);
-
-		obj.position = position;	
+					child.position = pos;
+				}
+			}
+			previousPosition = cameraPosition;
+		}
 	}
 }
