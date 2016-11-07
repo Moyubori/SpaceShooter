@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ProjectilesPlayer
   - ProjectilesEnemy
+  - BackgroundLooping
+  - BackgroundFloating
   layers:
   - Default
   - TransparentFX
