@@ -4,19 +4,29 @@ using System.Collections;
 public class Projectile : MonoBehaviour {
 
 	public float speed = 10f;
-	public float damage = 0.1f;
+	public int damage = 10;
+
+	[SerializeField]
+	private Renderer renderer;
 
 	void CheckIfOutOfCamera(){
 		//need to calculate boundaries here because the camera might change its size
-		//Debug.Log("Camera size check: " + Camera.main.orthographicSize);
-		float xBoundary = Camera.main.orthographicSize * Screen.width / Screen.height;
-		float yBoundary = Camera.main.orthographicSize;
+//		float yBoundary = Camera.main.orthographicSize;
+//		float xBoundary = yBoundary * Camera.main.aspect;
+//		Debug.Log("xy bounds: " + xBoundary + " " + yBoundary);
+//
+//
+//		if (transform.localPosition.x > xBoundary || transform.localPosition.x < -xBoundary || transform.localPosition.y > yBoundary || transform.localPosition.y < -yBoundary) {
+//			gameObject.SetActive (false);
+//		}
 
-		if (transform.position.x > xBoundary || transform.position.x < -xBoundary || transform.position.y > yBoundary || transform.position.y < -yBoundary) {
+		if (!renderer.isVisible) {
 			gameObject.SetActive (false);
 		}
+
 	}
 		
+
 	void OnEnable() {
 		//every half a second checks if the projectile should be deleted
 		InvokeRepeating ("CheckIfOutOfCamera", 1, 0.5f);
