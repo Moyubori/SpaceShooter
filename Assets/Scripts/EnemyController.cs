@@ -19,14 +19,17 @@ public class EnemyController : EnemyClass {
 
 	public WeaponClass weapon;
 
-	override public void TakeDamage (float damage){
-		if (damage > health) {
-			health = 0;
-			gameObject.SetActive (false);
-		} else {
-			health -= damage;
+	override public void TakeDamage (int damage){
+		_health = Mathf.Clamp (health - damage, 0, 100);
+		if (health == 0) {
+			gameObject.SetActive(false);
 		}
 	}
+
+	void OnDisable(){
+		_health = defaultHealth;
+		fireTimer = 0;
+		}
 
 	void OnTriggerEnter2D(Collider2D collider){
 		// check if collision should deal damage
@@ -34,6 +37,13 @@ public class EnemyController : EnemyClass {
 			TakeDamage (collider.GetComponent<Projectile> ().damage);
 			collider.gameObject.SetActive (false);
 		}
+	}
+
+	void Awake(){
+		defaultHealth = health;
+		defaultFirerate = firerate;
+		weapon.projectilePool = ObjectReferences.objectPools.FindChild ("EnemyProjectiles").GetComponent<ObjectPool>();
+		weapon.projectileOrigin = transform.FindChild ("WeaponSlot");
 	}
 
 	

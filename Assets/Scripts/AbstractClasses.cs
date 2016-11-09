@@ -7,19 +7,19 @@ public class AbstractClasses : MonoBehaviour {
 
 public abstract class EnemyClass : MonoBehaviour {
 
-	public float health {
+	public int health {
 		get { return _health; }
 		set { _health = value;
 			defaultHealth = value; }
 	}
 
 	[SerializeField]
-	private float _health = 1;
-	private float defaultHealth;
+	protected int _health = 100;
+	protected int defaultHealth;
 
 	//methods
 
-	public abstract void TakeDamage (float damage);
+	public abstract void TakeDamage (int damage);
 }
 
 public abstract class WeaponClass : MonoBehaviour {

@@ -34,15 +34,15 @@ public class PlayerController : MonoBehaviour {
 	private float fireTimer = 0; //shooting cooldown timer
 
 
-	public float health {
+	public int health {
 		get { return _health; }
 		set { _health = value;
 			defaultHealth = value; }
 	}
 
 	[SerializeField]
-	private float _health = 1;
-	private float defaultHealth;
+	private int _health = 100;
+	private int defaultHealth;
 
 
 	public int lives {
@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour {
 	public Transform healthBar;
 	public Transform livesIcons;
 	public Transform weaponSlot;
+	public ObjectBoundaries boundaries;
 
 
 	//methods
@@ -97,7 +98,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	// damage should be given as a float between 0 and 1
-	public void TakeDamage(float damage){
+	public void TakeDamage(int damage){
 		if (damage > health) {
 			_health = 0;
 		} else {
@@ -117,9 +118,10 @@ public class PlayerController : MonoBehaviour {
 		translationY = Input.GetAxis ("Vertical") * speed;
 		translationX = Input.GetAxis ("Horizontal") * speed;
 
-		// only a temporary solution, change that later
-		float yBoundary = cameraReference.orthographicSize * 0.97f; // multiplied by .97 so ship's texture won't partially go out of the screen
-		float xBoundary = yBoundary * cameraReference.aspect;
+		// subtract width and height of ship's sprite
+		float yBoundary = cameraReference.orthographicSize;
+		float xBoundary = yBoundary * cameraReference.aspect - boundaries.top;
+		yBoundary -= boundaries.right;
 
 		if ((transform.localPosition.x > xBoundary && translationX > 0) || (transform.localPosition.x < -xBoundary && translationX < 0)) {
 			translationX = 0;
