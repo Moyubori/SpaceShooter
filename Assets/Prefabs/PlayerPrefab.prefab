@@ -203,8 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8fe3bb4e8f4f04d88950abae6fe23e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 4000014085576922, guid: dda0f30a3f93d4c269b98ac047d3caab,
-    type: 2}
+  projectilePool: {fileID: 0}
   projectileOrigin: {fileID: 4000010155734854}
   weaponLevel: 0
 --- !u!114 &114000012234258448
@@ -221,12 +220,13 @@ MonoBehaviour:
   _speed: 0.1
   _firerate: 3
   manualMaxFirerate: 6
-  _health: 1
+  _health: 100
   _lives: 5
   cameraReference: {fileID: 0}
   healthBar: {fileID: 0}
   livesIcons: {fileID: 0}
   weaponSlot: {fileID: 4000010155734854}
+  boundaries: {fileID: 0}
 --- !u!212 &212000010855396516
 SpriteRenderer:
   m_ObjectHideFlags: 1

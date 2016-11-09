@@ -45,20 +45,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\EnemyMovement.cs" />
-     <Compile Include="Assets\ObjectReferences.cs" />
      <Compile Include="Assets\Scripts\AbstractClasses.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\FollowCamera.cs" />
      <Compile Include="Assets\Scripts\LevelTriggers.cs" />
      <Compile Include="Assets\Scripts\ManageHealthbar.cs" />
      <Compile Include="Assets\Scripts\ManageIcons.cs" />
      <Compile Include="Assets\Scripts\ObjectBoundaries.cs" />
      <Compile Include="Assets\Scripts\ObjectPool.cs" />
+     <Compile Include="Assets\Scripts\ObjectReferences.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\TemporaryEnemySpawner.cs" />
      <Compile Include="Assets\Scripts\WeaponScript.cs" />
-     <Compile Include="Assets\TemporaryEnemySpawner.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>

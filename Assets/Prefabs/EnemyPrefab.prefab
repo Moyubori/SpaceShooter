@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61c4b43a7f844bc5919067d1f0c6abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  _health: 30
   _firerate: 0.5
   manualMaxFirerate: 6
   weapon: {fileID: 114000013174783840}

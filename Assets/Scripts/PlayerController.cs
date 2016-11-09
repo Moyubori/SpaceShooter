@@ -34,15 +34,15 @@ public class PlayerController : MonoBehaviour {
 	private float fireTimer = 0; //shooting cooldown timer
 
 
-	public float health {
+	public int health {
 		get { return _health; }
 		set { _health = value;
 			defaultHealth = value; }
 	}
 
 	[SerializeField]
-	private float _health = 1;
-	private float defaultHealth;
+	private int _health = 100;
+	private int defaultHealth;
 
 
 	public int lives {
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	// damage should be given as a float between 0 and 1
-	public void TakeDamage(float damage){
+	public void TakeDamage(int damage){
 		if (damage > health) {
 			_health = 0;
 		} else {
