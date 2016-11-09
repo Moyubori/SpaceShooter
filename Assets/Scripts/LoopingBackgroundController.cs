@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class LoopingBackgroundController : BackgroundController {
-	public Sprite sprite;
-
 	override protected void UpdateChildren (float cameraOffset) {
 		foreach (Transform child in transform) {
 			if (child.gameObject.activeSelf) {
