@@ -8,7 +8,7 @@ public class ManageHealthbar : MonoBehaviour {
 	private Image greenBar;
 
 	// health should be a number between 0 and 1
-	public void SetHealth(float health){
-		greenBar.fillAmount = health;
+	public void SetHealth(int health){
+		greenBar.fillAmount = (health/100f);
 	}
 }

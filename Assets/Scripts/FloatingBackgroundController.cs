@@ -13,7 +13,6 @@ public class FloatingBackgroundController : BackgroundController {
 		if (spawnRate == 0) {
 			spawnRate = DEFAULT_RATE;
 		}
-
 		InvokeRepeating ("SpawnObject", DELAY, spawnRate);
 		InvokeRepeating ("CheckObjectsAgainstCamera", DELAY, CHECK_RATE);
 	}
@@ -57,8 +56,8 @@ public class FloatingBackgroundController : BackgroundController {
 
 		Vector3 position = toActivate.parent.position;
 		position.x += camera.orthographicSize * camera.aspect;
-		position.y = Random.value * camera.orthographicSize;
-		position.z = Random.value*100+30; //TODO placeholder
+		position.y = Random.Range(-1f, 1f) * camera.orthographicSize;
+		position.z = Random.Range(-1f, 1f) * 100 + 30; //TODO placeholder
 		toActivate.position = position;
 	}
 

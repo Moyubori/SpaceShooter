@@ -9,7 +9,8 @@ public class TemporaryEnemySpawner : MonoBehaviour {
 	private bool tryToSpawnNewEnemy = true;
 
 	private void RespawnEnemy(){
-		enemy = pool.GetInstance (transform.position, Quaternion.Euler(new Vector3(0,0,180)));
+		Vector3 temp = transform.position;
+		enemy = pool.GetInstance (temp, Quaternion.Euler(new Vector3(0,0,180)));
 	}
 
 	private void TryToSpawnNewEnemy(){

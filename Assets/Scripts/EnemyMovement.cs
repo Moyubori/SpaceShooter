@@ -10,10 +10,7 @@ public class EnemyMovement : MonoBehaviour {
 	private float sTime;
 
 	void OnEnable(){
-		sPoint = transform.localPosition;
-		fPoint = sPoint;
-		fPoint.x -= 6;
-		sTime = Time.time;
+		Start();
 	}
 
 	void OnDisable(){
