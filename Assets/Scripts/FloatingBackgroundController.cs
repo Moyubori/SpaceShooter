@@ -78,7 +78,7 @@ public class FloatingBackgroundController : BackgroundController {
 				child.position.x < cameraX - cameraWidth ||
 				child.position.y > cameraY + cameraHeight || 
 				child.position.y < cameraY - cameraHeight) {
-				Debug.Log (child.name + ": pos[" + child.position.x + " ; " + child.position.y + "] cameraPos: [" + cameraX + " ; " + cameraY + "] cameraHalfSize: " + cameraWidth + " ; " + cameraHeight + "]");
+				//Debug.Log (child.name + ": pos[" + child.position.x + " ; " + child.position.y + "] cameraPos: [" + cameraX + " ; " + cameraY + "] cameraHalfSize: " + cameraWidth + " ; " + cameraHeight + "]");
 				child.gameObject.SetActive (false);
 			}
 		}

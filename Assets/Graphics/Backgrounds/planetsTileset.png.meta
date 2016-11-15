@@ -1,0 +1,395 @@
+fileFormatVersion: 2
+guid: d7c620d8aac7a4ee08e3e5c7df585ba9
+timeCreated: 1479196945
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: planetsTileset_0
+    21300002: planetsTileset_1
+    21300004: planetsTileset_2
+    21300006: planetsTileset_3
+    21300008: planetsTileset_4
+    21300010: planetsTileset_5
+    21300012: planetsTileset_6
+    21300014: planetsTileset_7
+    21300016: planetsTileset_8
+    21300018: planetsTileset_9
+    21300020: planetsTileset_10
+    21300022: planetsTileset_11
+    21300024: planetsTileset_12
+    21300026: planetsTileset_13
+    21300028: planetsTileset_14
+    21300030: planetsTileset_15
+    21300032: planetsTileset_16
+    21300034: planetsTileset_17
+    21300036: planetsTileset_18
+    21300038: planetsTileset_19
+    21300040: planetsTileset_20
+    21300042: planetsTileset_21
+    21300044: planetsTileset_22
+    21300046: planetsTileset_23
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: planetsTileset_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 393
+        width: 635
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_1
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 533
+        width: 774
+        height: 630
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_2
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 637
+        width: 414
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_3
+      rect:
+        serializedVersion: 2
+        x: 2037
+        y: 816
+        width: 605
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_4
+      rect:
+        serializedVersion: 2
+        x: 2712
+        y: 991
+        width: 212
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_5
+      rect:
+        serializedVersion: 2
+        x: 3045
+        y: 963
+        width: 194
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_6
+      rect:
+        serializedVersion: 2
+        x: 3066
+        y: 784
+        width: 231
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_7
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 85
+        width: 198
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_8
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 67
+        width: 129
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_9
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 15
+        width: 173
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_10
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 75
+        width: 64
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_11
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 72
+        width: 115
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_12
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 120
+        width: 67
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_13
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 121
+        width: 91
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_14
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 135
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_15
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 121
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_16
+      rect:
+        serializedVersion: 2
+        x: 1902
+        y: 128
+        width: 68
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_17
+      rect:
+        serializedVersion: 2
+        x: 2082
+        y: 85
+        width: 198
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_18
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 164
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_19
+      rect:
+        serializedVersion: 2
+        x: 2521
+        y: 166
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_20
+      rect:
+        serializedVersion: 2
+        x: 2623
+        y: 155
+        width: 65
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_21
+      rect:
+        serializedVersion: 2
+        x: 2741
+        y: 155
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_22
+      rect:
+        serializedVersion: 2
+        x: 2847
+        y: 157
+        width: 55
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: planetsTileset_23
+      rect:
+        serializedVersion: 2
+        x: 2958
+        y: 157
+        width: 57
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

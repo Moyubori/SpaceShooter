@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour {
 		set { _health = value;
 			defaultHealth = value; }
 	}
+	public int maxHealth = 100;
 
 	[SerializeField]
 	private int _health = 100;
@@ -60,8 +61,8 @@ public class PlayerController : MonoBehaviour {
 
 	[Header("Other:")]
 	public Camera cameraReference;
-	public Transform healthBar;
-	public Transform livesIcons;
+	public ManageHealthbar healthBar;
+	public ManageIcons livesIcons;
 	public Transform weaponSlot;
 	public ObjectBoundaries boundaries;
 
@@ -73,6 +74,10 @@ public class PlayerController : MonoBehaviour {
 		defaultFirerate = _firerate;
 		defaultHealth = _health;
 		defaultLives = _lives;
+	}
+
+	void Start(){
+		healthBar.SetHealth (health);
 	}
 
 	// changes the speed of the player for a given amount of time(given in seconds)
@@ -99,12 +104,19 @@ public class PlayerController : MonoBehaviour {
 
 	// damage should be given as a float between 0 and 1
 	public void TakeDamage(int damage){
-		if (damage > health) {
-			_health = 0;
+		if (damage >= health) {
+			// TODO: replace this with respawning mechanic
+			if (lives != 0) {
+				_health = maxHealth;
+				livesIcons.SetLives (lives - 1);
+				lives -= 1;
+			} else {
+				gameObject.SetActive (false);
+			}
 		} else {
 			_health -= damage;
 		}
-		healthBar.GetComponent<ManageHealthbar> ().SetHealth(health);
+		healthBar.SetHealth(health);
 	}
 
 

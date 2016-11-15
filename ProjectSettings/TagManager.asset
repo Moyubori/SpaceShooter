@@ -8,6 +8,7 @@ TagManager:
   - ProjectilesEnemy
   - BackgroundLooping
   - BackgroundFloating
+  - LoopingBackground
   layers:
   - Default
   - TransparentFX
@@ -56,4 +57,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2227814897
+    locked: 0
+  - name: UI
+    uniqueID: 300961781
     locked: 0

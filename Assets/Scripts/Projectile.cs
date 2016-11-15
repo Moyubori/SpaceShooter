@@ -10,7 +10,9 @@ public class Projectile : MonoBehaviour {
 	private Renderer renderer;
 
 	void CheckIfOutOfCamera(){
-		//need to calculate boundaries here because the camera might change its size
+
+
+//		//need to calculate boundaries here because the camera might change its size
 //		float yBoundary = Camera.main.orthographicSize;
 //		float xBoundary = yBoundary * Camera.main.aspect;
 //		Debug.Log("xy bounds: " + xBoundary + " " + yBoundary);
@@ -20,6 +22,8 @@ public class Projectile : MonoBehaviour {
 //			gameObject.SetActive (false);
 //		}
 
+
+		// that is good enough, right?
 		if (!renderer.isVisible) {
 			gameObject.SetActive (false);
 		}
@@ -44,10 +48,6 @@ public class Projectile : MonoBehaviour {
 	void OnCollisionExit2D(Collision2D collisionInfo){
 		string collider = collisionInfo.collider.gameObject.name;
 		Debug.Log ("Projectile out" + collider);
-	}
-
-	void Start() {
-		//Debug.Log (transform.right);
 	}
 
 	void Update () {

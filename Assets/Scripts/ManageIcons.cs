@@ -3,6 +3,11 @@ using System.Collections;
 
 public class ManageIcons : MonoBehaviour {
 
+	public int iconsActive{
+		get { return _iconsActive; }
+	}
+	private int _iconsActive = 5;
+
 	private Transform[] icons;
 
 	void Start () {
@@ -21,5 +26,6 @@ public class ManageIcons : MonoBehaviour {
 		for (int i = lives; i < 5; i++) {
 			icons [i].gameObject.SetActive (false);
 		}
+		_iconsActive = lives;
 	}
 }

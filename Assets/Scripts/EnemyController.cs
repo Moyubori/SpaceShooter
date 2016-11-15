@@ -42,7 +42,7 @@ public class EnemyController : EnemyClass {
 	void Awake(){
 		defaultHealth = health;
 		defaultFirerate = firerate;
-		weapon.projectilePool = ObjectReferences.objectPools.FindChild ("EnemyProjectiles").GetComponent<ObjectPool>();
+		weapon.projectilePool = GameObject.FindWithTag ("ObjectPools").transform.FindChild ("EnemyProjectiles").GetComponent<ObjectPool> ();
 		weapon.projectileOrigin = transform.FindChild ("WeaponSlot");
 	}
 
