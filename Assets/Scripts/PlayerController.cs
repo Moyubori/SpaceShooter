@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-
 	//stats
 
 	// setter sets the default value
@@ -61,15 +60,16 @@ public class PlayerController : MonoBehaviour {
 
 	[Header("Other:")]
 	public Camera cameraReference;
-	public ManageHealthbar healthBar;
-	public ManageIcons livesIcons;
-	public Transform weaponSlot;
+	public HealthbarManager healthBar;
+	public HealthIconsManager livesIcons;
+	public Weapon weapon;
 	public ObjectBoundaries boundaries;
 
 
 	//methods
 
 	void Awake(){
+		// setting the default variables
 		defaultSpeed = _speed;
 		defaultFirerate = _firerate;
 		defaultHealth = _health;
@@ -77,7 +77,13 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Start(){
+		// sets healthbar to the initial value
 		healthBar.SetHealth (health);
+
+		weapon = transform.Find ("WeaponSlot").GetChild (0).GetComponent<Weapon>();
+		if (weapon == null) {
+			Debug.Log ("No weapon");
+		}
 	}
 
 	// changes the speed of the player for a given amount of time(given in seconds)
@@ -121,7 +127,7 @@ public class PlayerController : MonoBehaviour {
 
 
 	private void Shoot(){
-		weaponSlot.GetChild (0).GetComponent<WeaponScript> ().Shoot ();
+		weapon.Shoot ();
 	}
 
 

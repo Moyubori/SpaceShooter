@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ManageIcons : MonoBehaviour {
+public class HealthIconsManager : MonoBehaviour {
 
 	public int iconsActive{
 		get { return _iconsActive; }

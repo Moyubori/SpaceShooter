@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyController : EnemyClass {
+public class EnemyController : Enemy {
 
 	//shots fired per second
 	public float firerate {
@@ -14,11 +14,11 @@ public class EnemyController : EnemyClass {
 	private float _firerate = 0.5f;
 	private float defaultFirerate;
 	[SerializeField]
-	private float manualMaxFirerate = 6f; //firerate when shooting manually(pressing and releasing button repeatedly)
 	private float fireTimer = 0; //shooting cooldown timer
 
-	public WeaponClass weapon;
+	public Weapon weapon;
 
+	// use this to deal damage to this enemy
 	override public void TakeDamage (int damage){
 		_health = Mathf.Clamp (health - damage, 0, 100);
 		if (health == 0) {
@@ -42,10 +42,13 @@ public class EnemyController : EnemyClass {
 	void Awake(){
 		defaultHealth = health;
 		defaultFirerate = firerate;
+		weapon = transform.Find ("WeaponSlot").GetChild (0).GetComponent<Weapon> ();
+	}
+
+	void Start(){
 		weapon.projectilePool = GameObject.FindWithTag ("ObjectPools").transform.FindChild ("EnemyProjectiles").GetComponent<ObjectPool> ();
 		weapon.projectileOrigin = transform.FindChild ("WeaponSlot");
 	}
-
 	
 	void Update (){
 		fireTimer += Time.deltaTime;

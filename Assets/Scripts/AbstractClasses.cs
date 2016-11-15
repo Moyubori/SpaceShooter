@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AbstractClasses : MonoBehaviour {
+public class AbstractClasses : MonoBehaviour {}
 
-}
-
-public abstract class EnemyClass : MonoBehaviour {
+public abstract class Enemy : MonoBehaviour {
 
 	public int health {
 		get { return _health; }
@@ -17,12 +15,12 @@ public abstract class EnemyClass : MonoBehaviour {
 	protected int _health = 100;
 	protected int defaultHealth;
 
-	//methods
-
 	public abstract void TakeDamage (int damage);
 }
 
-public abstract class WeaponClass : MonoBehaviour {
+
+
+public abstract class Weapon : MonoBehaviour {
 
 	public ObjectPool projectilePool;
 	public Transform projectileOrigin;
@@ -32,6 +30,8 @@ public abstract class WeaponClass : MonoBehaviour {
 
 	public abstract void Shoot ();
 }
+
+
 
 public abstract class BackgroundController : MonoBehaviour {
 	public Camera camera;

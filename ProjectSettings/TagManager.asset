@@ -9,6 +9,8 @@ TagManager:
   - BackgroundLooping
   - BackgroundFloating
   - LoopingBackground
+  - ObjectPools
+  - Weapon
   layers:
   - Default
   - TransparentFX

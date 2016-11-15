@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WeaponScript : WeaponClass {
+public class DefaultWeapon : Weapon {
 
 	override public void Shoot (){
 		switch(weaponLevel){
