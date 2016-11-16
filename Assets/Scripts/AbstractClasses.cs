@@ -66,6 +66,14 @@ public abstract class BackgroundController : MonoBehaviour {
 
 
 
+public abstract class InflictingDamage : MonoBehaviour {
+
+	public int damage = 10;
+
+}
+
+
+
 
 
 

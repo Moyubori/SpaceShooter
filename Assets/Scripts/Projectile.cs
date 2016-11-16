@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : InflictingDamage {
 
 	public float speed = 10f;
-	public int damage = 10;
+	//public int damage = 10;
 
 	[SerializeField]
 	private Renderer renderer;
@@ -38,6 +38,6 @@ public class Projectile : MonoBehaviour {
 
 	void Update () {
 		// movement of the projectile
-		transform.position += transform.right * speed * Time.deltaTime;
+		transform.localPosition += transform.right * speed * Time.deltaTime;
 	}
 }
