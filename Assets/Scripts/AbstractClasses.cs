@@ -34,7 +34,7 @@ public abstract class Weapon : MonoBehaviour {
 
 
 public abstract class BackgroundController : MonoBehaviour {
-	public Camera camera;
+	new public Camera camera;
 
 	private Vector3 previousPosition;
 	void Start () {
@@ -47,25 +47,21 @@ public abstract class BackgroundController : MonoBehaviour {
 
 		if (cameraOffset != 0) {
 			//Whole background moves with camera
-			transform.Translate (new Vector2 (cameraOffset, 0));
-
+			Vector3 newPos = camera.transform.position;
+			newPos.x = camera.transform.position.x + cameraOffset;
+			transform.position = newPos;
+		
 			UpdateChildren (cameraOffset);
 			previousPosition = cameraPosition;
 		}
 	}
 
+	protected abstract void UpdateChildren(float cameraOffset);
+
 	protected void UpdateParallax(Transform child, float cameraOffset) {
-		//parallax is inversely proportional to zDistance. May be not strictly corret
+		//parallax is inversely proportional to zDistance. May be not strictly correct
 		float zDistance = Mathf.Abs (child.position.z - camera.transform.position.z);
 		float parallax = -cameraOffset / zDistance;
-		child.Translate(new Vector3(parallax, 0, 0));
+		child.Translate(new Vector3(parallax, 0, 0), Space.World);
 	}
-		
-	protected abstract void UpdateChildren(float cameraOffset);
 }
-
-
-
-
-
-
