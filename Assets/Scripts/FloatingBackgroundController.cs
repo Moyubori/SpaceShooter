@@ -13,32 +13,35 @@ public class FloatingBackgroundController : BackgroundController {
 
 	public ObjectPool backgroundPool;
 	public string resourcePath;
-	private Sprite[] sprites;
+
+	private Sprite[] sprites; //should not be accessed directly, it is managed by Spawn() method
+	private int spriteToSpawnIndex = 0;
 
 	void Start() {
 		LoadResources (resourcePath);
 		InvokeRepeating ("TimedUpdate", TIMED_UPDATE_DELAY, TIMED_UPDATE_INTERVAL);
+		ShuffleSprites ();
 		InitialSpawn ();
 	}
 
-	//makes it easier to load different file later
+	//makes it easier to load a different file later
 	void LoadResources(string path) {
 		sprites = Resources.LoadAll<Sprite> (path);
-	}
-		
-	//called each frame in base class' Update();
-	override protected void UpdateChildren (float cameraOffset) {
-		foreach (Transform child in backgroundPool.transform) {
-			if (child.gameObject.activeSelf) {
-				UpdateParallax (child, cameraOffset);
-			}
-		}
 	}
 
 	//called in timed intervals
 	private void TimedUpdate() {
 		CheckObjectsDespawn ();
 		CheckObjectsSpawn ();
+	}
+		
+	void ShuffleSprites() {
+		for (int i = sprites.Length - 2; i >= 0; i--) {
+			int index = Random.Range (0, i);
+			Sprite tmp = sprites [i];
+			sprites [i] = sprites [index];
+			sprites [index] = tmp;
+		}
 	}
 		
 	void InitialSpawn () {
@@ -55,6 +58,18 @@ public class FloatingBackgroundController : BackgroundController {
 		}
 	}
 
+
+
+
+
+	//called each frame in base class' Update();
+	override protected void UpdateChildren (float cameraOffset) {
+		foreach (Transform child in backgroundPool.transform) {
+			if (child.gameObject.activeSelf) {
+				UpdateParallax (child, cameraOffset);
+			}
+		}
+	}
 
 
 
@@ -135,10 +150,13 @@ public class FloatingBackgroundController : BackgroundController {
 		return z;
 
 	}
-
-	//TODO prevent having many similar sprites at once
+		
 	private Sprite GetRandomSprite() {
-		int count = sprites.Length;
-		return (count > 0) ? sprites[Random.Range (0, count)] : null;
+		if (spriteToSpawnIndex >= sprites.Length) {
+			spriteToSpawnIndex = 0;
+			ShuffleSprites ();
+		}
+
+		return sprites [spriteToSpawnIndex++];
 	}
 }
