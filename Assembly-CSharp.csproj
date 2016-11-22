@@ -45,8 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Graphics\iTween.cs" />
-     <Compile Include="Assets\Graphics\move.cs" />
+     <Compile Include="Assets\MovementController.cs" />
      <Compile Include="Assets\Pixelplacement\iTweenPath\iTweenPath.cs" />
      <Compile Include="Assets\Scripts\AbstractClasses.cs" />
      <Compile Include="Assets\Scripts\Asteroid.cs" />
@@ -65,6 +64,8 @@
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\TemporaryEnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\iTween.cs" />
+     <Compile Include="Assets\Scripts\move.cs" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>

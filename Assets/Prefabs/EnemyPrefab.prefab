@@ -22,7 +22,7 @@ GameObject:
   - 60: {fileID: 60000011114847186}
   - 114: {fileID: 114000014090329250}
   - 114: {fileID: 114000012010505516}
-  - 114: {fileID: 114000012901112368}
+  - 114: {fileID: 114000013248062852}
   m_Layer: 9
   m_Name: EnemyPrefab
   m_TagString: Untagged
@@ -158,32 +158,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010031402446}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dbb633736b304935ab2304756a62168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.7
---- !u!114 &114000012901112368
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010031402446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: EnemyPath
-  pathColor: {r: 0, g: 1, b: 1, a: 1}
-  nodes:
-  - {x: 14, y: -6, z: 0}
-  - {x: 14, y: 6, z: 0}
-  nodeCount: 2
-  initialized: 1
-  initialName: New Path 1
-  pathVisible: 1
 --- !u!114 &114000013174783840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,6 +178,17 @@ MonoBehaviour:
   projectilePool: {fileID: 0}
   projectileOrigin: {fileID: 0}
   weaponLevel: 0
+--- !u!114 &114000013248062852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010031402446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2416c8d9d656b456eaeeb86aeb81ee4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000014090329250
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -45,7 +45,7 @@ public class Asteroid : InflictingDamage {
 	void Start(){
 		sprite = transform.GetChild (0);
 		GetComponent<Rigidbody2D> ().velocity = new Vector2(-calculatedTranslation,0);
-		Debug.Log (GetComponent<Rigidbody2D> ().velocity);
+		//Debug.Log (GetComponent<Rigidbody2D> ().velocity);
 		InvokeRepeating ("CheckIfOutOfScreen", 1, 0.5f);
 	}
 

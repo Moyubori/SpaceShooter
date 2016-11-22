@@ -20,22 +20,16 @@ public class EnemyMovement : MonoBehaviour {
 	}
 
 	void Start(){
-		iTween.MoveBy (gameObject, iTween.Hash("islocal",true,"x",6,"time",3f,"delay",1f));
 		StartCoroutine (Animate());
 	}
 
 	IEnumerator Animate(){
-		Vector3[] path = {
-			new Vector3 (0, transform.localPosition.y + 6, 0),
-			new Vector3 (0, transform.localPosition.y - 6, 0)
-		};
+		iTween.MoveTo (gameObject, iTween.Hash ("path", iTweenPath.GetPath("SpawnToStdPatrolPath"), "time", 4f, "easeType", "linearTween", "movetopath", false));
 		yield return new WaitForSeconds (4f);
-		iTween.MoveTo (gameObject, iTween.Hash ("islocal", true, "y", -6f, "time", 2f));
-		yield return new WaitForSeconds (2f);
 		while (gameObject.activeSelf) {
-			iTween.MoveTo (gameObject, iTween.Hash ("path", iTweenPath.GetPath("EnemyPath"), "time", 5f, "easeType", "linearTween", "movetopath", false));
+			iTween.MoveTo (gameObject, iTween.Hash ("path", iTweenPath.GetPath("StdPatrolPath"), "time", 5f, "easeType", "linearTween", "movetopath", false));
 			yield return new WaitForSeconds (5f);
-			iTween.MoveTo (gameObject, iTween.Hash ("path", iTweenPath.GetPathReversed("EnemyPath"), "time", 5f, "easeType", "linearTween", "movetopath", false));
+			iTween.MoveTo (gameObject, iTween.Hash ("path", iTweenPath.GetPathReversed("StdPatrolPath"), "time", 5f, "easeType", "linearTween", "movetopath", false));
 			yield return new WaitForSeconds (5f);
 		}
 	}

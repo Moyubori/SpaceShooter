@@ -4,7 +4,7 @@ using System.Collections;
 public class LevelTriggers : MonoBehaviour {
 
 	public Camera mainCam;
-	
+
 	void Update () {
 		// moves the camera right
 		// only a temporary solution
