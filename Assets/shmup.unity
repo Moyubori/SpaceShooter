@@ -1820,6 +1820,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 798170766}
+  - 114: {fileID: 798170767}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -1842,6 +1843,17 @@ Transform:
   - {fileID: 172967054}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &798170767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798170765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab37005930a547a6809916b31bdc18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &802152102 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011497361786, guid: 183bc0330d0fa4479899dd1b6bb99a6b,
@@ -3012,8 +3024,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1057866528}
-  - {fileID: 802152102}
   - {fileID: 1734866010}
+  - {fileID: 802152102}
   - {fileID: 219398230}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -3357,7 +3369,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1551208867}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &1734866011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4162,7 +4174,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011497361786, guid: 183bc0330d0fa4479899dd1b6bb99a6b, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114000012234258448, guid: 183bc0330d0fa4479899dd1b6bb99a6b,
         type: 2}
