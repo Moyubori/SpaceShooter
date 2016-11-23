@@ -54,7 +54,14 @@ public abstract class BackgroundController : MonoBehaviour {
 
 	protected abstract void UpdateChildren(float cameraOffset);
 
-
+	protected void UpdateParallax(Transform child, float cameraOffset) {
+		//parallax is inversely proportional to zDistance. May be not strictly correct
+		float zDistance = Mathf.Abs (child.position.z);
+		float parallax = -cameraOffset / zDistance;
+		Debug.Log ("Z: " + zDistance + "\tparallax: " + parallax);
+		child.Translate(new Vector3(parallax, 0, 0), Space.World);
+	}
+}
 
 public abstract class InflictingDamage : MonoBehaviour {
 
