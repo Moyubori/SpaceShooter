@@ -9,7 +9,7 @@ public class FloatingBackgroundController : BackgroundController {
 	private static float TIMED_UPDATE_INTERVAL = 0.5f;
 
 	//distance between planets
-	private static float PLANETS_DISTANCE = 6.0f;
+	private static float PLANETS_DISTANCE = 5.0f;
 
 	public ObjectPool backgroundPool;
 	public string resourcePath;
@@ -50,7 +50,7 @@ public class FloatingBackgroundController : BackgroundController {
 			Sprite sprite = GetRandomSprite ();
 
 			Vector3 pos = new Vector3 ();
-			pos.x = x - cameraWidth;
+			pos.x = x - cameraWidth + sprite.bounds.extents.x;
 			pos.y = CalculatePositionY ();
 			pos.z = CalculatePositionZ (sprite);
 
@@ -79,7 +79,7 @@ public class FloatingBackgroundController : BackgroundController {
 			Bounds bounds = child.GetComponent<SpriteRenderer> ().bounds;
 			float cameraX = camera.transform.position.x;
 			float cameraWidth = camera.orthographicSize * camera.aspect;
-			if (bounds.max.x < cameraX - cameraWidth /*|| bounds.min.x > cameraX + cameraWidth*/) {
+			if (bounds.max.x < cameraX - cameraWidth) {
 				child.gameObject.SetActive (false);
 			}
 		}
@@ -131,7 +131,7 @@ public class FloatingBackgroundController : BackgroundController {
 	}
 
 	private float CalculatePositionX(Sprite sprite) {
-		return transform.position.x + sprite.bounds.extents.x + camera.orthographicSize * camera.aspect;
+		return sprite.bounds.extents.x + camera.orthographicSize * camera.aspect;
 	}
 
 	private float CalculatePositionY() {

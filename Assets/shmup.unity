@@ -1000,7 +1000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &769660512
 Transform:
   m_ObjectHideFlags: 0
@@ -1024,6 +1024,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 798170766}
+  - 114: {fileID: 798170767}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -1046,6 +1047,18 @@ Transform:
   - {fileID: 172967054}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &798170767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798170765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e20adb7e07bb44e8a4ca51e5d464b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollRate: 10
 --- !u!4 &802152102 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011497361786, guid: 183bc0330d0fa4479899dd1b6bb99a6b,
@@ -1907,7 +1920,6 @@ GameObject:
   - 4: {fileID: 1662099940}
   - 114: {fileID: 1662099941}
   - 114: {fileID: 1662099942}
-  - 114: {fileID: 1662099943}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -1952,18 +1964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839482cda9e58402a8a39da4c978e3a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1662099943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1662099939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b318fa92a53741bdb834f8bbaf64284, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCam: {fileID: 1864232006}
 --- !u!1 &1676251299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2555,7 +2555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2138636435
 Transform:
   m_ObjectHideFlags: 0
