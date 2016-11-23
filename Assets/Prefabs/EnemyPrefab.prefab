@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 30
-  _firerate: 0.5
+  _firerate: 2
   fireTimer: 0
   weapon: {fileID: 0}
 --- !u!212 &212000013405127090

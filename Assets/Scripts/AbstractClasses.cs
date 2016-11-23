@@ -72,6 +72,32 @@ public abstract class InflictingDamage : MonoBehaviour {
 
 }
 
+public abstract class LevelEvent : MonoBehaviour {
+
+	public bool running{
+		get { return _running; }
+	}
+	private bool _running = false;
+
+	public bool finished{
+		get { return _finished; }
+	}
+	private bool _finished = false;
+
+	public void LaunchEvent(){
+		_running = true;
+		StartCoroutine(EventActions ());
+	}
+		
+	protected abstract IEnumerator EventActions ();
+
+	public void FinishEvent(){
+		StopCoroutine ("EventActions");
+		_running = false;
+		_finished = true;
+	}
+}
+
 
 
 
