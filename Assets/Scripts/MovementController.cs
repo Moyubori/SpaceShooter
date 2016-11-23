@@ -28,12 +28,12 @@ public class MovementController : MonoBehaviour {
 
 	// adds a new path with given properties into queue
 	public void QueuePath (string pathName, float time, string loop = "none"){
-		TweenProperties temp = new TweenProperties ();
-		temp.pathName = pathName;
-		temp.path = iTweenPath.GetPath(pathName);
-		temp.time = time;
-		temp.loop = loop;
-		tweenQueue.Enqueue (temp);
+		TweenProperties newTween = new TweenProperties ();
+		newTween.pathName = pathName;
+		newTween.path = iTweenPath.GetPath(pathName);
+		newTween.time = time;
+		newTween.loop = loop;
+		tweenQueue.Enqueue (newTween);
 	}
 
 	void OnDisable(){

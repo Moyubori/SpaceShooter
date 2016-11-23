@@ -26,5 +26,4 @@ public class TemporaryEnemySpawner : MonoBehaviour {
 	void Start (){
 		InvokeRepeating ("TryToSpawnNewEnemy", 0, 1);
 	}
-		
 }

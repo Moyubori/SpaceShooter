@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class EventController : MonoBehaviour {
 
 	private Queue<LevelEvent> eventQueue;
-	public LevelEvent[] eventArray;
+	public LevelEvent[] eventArray; // events from this array will be pushed to the queue
 
 	private LevelEvent currentEvent;
 
@@ -14,7 +14,8 @@ public class EventController : MonoBehaviour {
 	}
 
 	private void TryToLaunchNextEvent(){
-		if (currentEvent == null) {
+		// check if should launch a new event
+		if (currentEvent == null) { // no event was set
 			if (eventQueue.Count > 0) {
 				currentEvent = eventQueue.Dequeue ();
 			} else {
@@ -22,9 +23,9 @@ public class EventController : MonoBehaviour {
 				return;
 			}
 		} else {
-			if (currentEvent.running) {
+			if (currentEvent.running) { // there is an active event
 				return;
-			} else if (currentEvent.finished) {
+			} else if (currentEvent.finished) { // there was an active event, but it finished
 				if (eventQueue.Count > 0) {
 					currentEvent = eventQueue.Dequeue ();
 				} else {
@@ -45,7 +46,6 @@ public class EventController : MonoBehaviour {
 			eventQueue.Enqueue (i);
 		}
 
-		InvokeRepeating ("TryToLaunchNextEvent", 0, 3f);
+		InvokeRepeating ("TryToLaunchNextEvent", 0, 1f);
 	}
-
 }

@@ -10,16 +10,6 @@ public class Projectile : InflictingDamage {
 	private Renderer renderer;
 
 	void CheckIfOutOfCamera(){
-//		//need to calculate boundaries here because the camera might change its size
-//		float yBoundary = Camera.main.orthographicSize;
-//		float xBoundary = yBoundary * Camera.main.aspect;
-//		Debug.Log("xy bounds: " + xBoundary + " " + yBoundary);
-//
-//
-//		if (transform.localPosition.x > xBoundary || transform.localPosition.x < -xBoundary || transform.localPosition.y > yBoundary || transform.localPosition.y < -yBoundary) {
-//			gameObject.SetActive (false);
-//		}
-
 		// that is good enough, right?
 		if (!renderer.isVisible) {
 			gameObject.SetActive (false);

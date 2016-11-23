@@ -14,6 +14,6 @@ public class AsteroidSpawner : MonoBehaviour {
 	}
 
 	void Start(){
-		InvokeRepeating ("TryToDeployAnAsteroid", 0, 3);
+		InvokeRepeating ("TryToDeployAnAsteroid", 0, 3f);
 	}
 }
