@@ -57,7 +57,7 @@ public class MovementController : MonoBehaviour {
 	IEnumerator Animate(){
 		if (tweenQueue.Count > 0) {
 			TweenProperties tempProperties = tweenQueue.Dequeue ();
-			iTween.MoveTo (gameObject, iTween.Hash("path", tempProperties.path, "time", tempProperties.time, "movetopath", false));
+			iTween.MoveTo (gameObject, iTween.Hash("path", tempProperties.path, "time", tempProperties.time, "movetopath", false, "easeType", "linear"));
 
 			// reinsert tween back into queue if it's looping
 			if (tempProperties.loop == "reverse") {

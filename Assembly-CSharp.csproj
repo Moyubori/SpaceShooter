@@ -45,26 +45,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AbstractClasses.cs" />
-     <Compile Include="Assets\Scripts\Asteroid.cs" />
-     <Compile Include="Assets\Scripts\AsteroidSpawner.cs" />
-     <Compile Include="Assets\Scripts\DefaultWeapon.cs" />
-     <Compile Include="Assets\Scripts\EnemyController.cs" />
-     <Compile Include="Assets\Scripts\EventController.cs" />
-     <Compile Include="Assets\Scripts\FloatingBackgroundController.cs" />
-     <Compile Include="Assets\Scripts\FollowCamera.cs" />
-     <Compile Include="Assets\Scripts\HealthIconsManager.cs" />
-     <Compile Include="Assets\Scripts\HealthbarManager.cs" />
-     <Compile Include="Assets\Scripts\LoopingBackgroundController.cs" />
-     <Compile Include="Assets\Scripts\MovementController.cs" />
-     <Compile Include="Assets\Scripts\ObjectBoundaries.cs" />
-     <Compile Include="Assets\Scripts\ObjectPool.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\Projectile.cs" />
-     <Compile Include="Assets\Scripts\ScrollBackground.cs" />
-     <Compile Include="Assets\Scripts\StandardEnemyWaveEvent.cs" />
-     <Compile Include="Assets\Scripts\iTween.cs" />
-     <Compile Include="Assets\Scripts\iTweenPath.cs" />
+     <Compile Include="Assets\Scripts\Controllers\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\EventController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\FloatingBackgroundController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\HealthIconsManager.cs" />
+     <Compile Include="Assets\Scripts\Controllers\HealthbarManager.cs" />
+     <Compile Include="Assets\Scripts\Controllers\LoopingBackgroundController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\MovementController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\ScrollBackground.cs" />
+     <Compile Include="Assets\Scripts\Events\StandardEnemyWaveEvent.cs" />
+     <Compile Include="Assets\Scripts\Events\StartLevel.cs" />
+     <Compile Include="Assets\Scripts\GameObjectScripts\Asteroid.cs" />
+     <Compile Include="Assets\Scripts\GameObjectScripts\AsteroidSpawner.cs" />
+     <Compile Include="Assets\Scripts\GameObjectScripts\DefaultWeapon.cs" />
+     <Compile Include="Assets\Scripts\GameObjectScripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\General\AbstractClasses.cs" />
+     <Compile Include="Assets\Scripts\General\FollowCamera.cs" />
+     <Compile Include="Assets\Scripts\General\ObjectBoundaries.cs" />
+     <Compile Include="Assets\Scripts\General\ObjectPool.cs" />
+     <Compile Include="Assets\Scripts\General\iTween.cs" />
+     <Compile Include="Assets\Scripts\General\iTweenPath.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>

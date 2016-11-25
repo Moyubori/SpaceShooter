@@ -9,6 +9,7 @@ public class StandardEnemyWaveEvent : LevelEvent {
 	override protected IEnumerator EventActions(){
 		Transform currentEnemy;
 		while (enemiesToSpawn >= 0) {
+			Debug.LogWarning (enemiesToSpawn + " enemies left");
 			enemiesToSpawn--;
 			currentEnemy = enemyPool.GetInstance (new Vector3(20,0,0));
 			currentEnemy.GetComponent<MovementController> ().QueuePath ("SpawnToStdPatrolPath", 4f);
