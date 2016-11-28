@@ -10,12 +10,17 @@ public class DefaultWeapon : Weapon {
 			break;
 
 		case 1:
-			projectilePool.GetInstance (projectileOrigin.position, projectileOrigin.rotation);
-			projectilePool.GetInstance (projectileOrigin.position, projectileOrigin.rotation * Quaternion.Euler(0,0,7));
-			projectilePool.GetInstance (projectileOrigin.position, projectileOrigin.rotation * Quaternion.Euler(0,0,-7));
-			break;
+            projectilePool.GetInstance(projectileOrigin.position, projectileOrigin.rotation * Quaternion.Euler(0, 0, 3));
+            projectilePool.GetInstance(projectileOrigin.position, projectileOrigin.rotation * Quaternion.Euler(0, 0, -3));
+            break;
 
-		case 2:
+       case 2:
+            projectilePool.GetInstance(projectileOrigin.position, projectileOrigin.rotation);
+            projectilePool.GetInstance(projectileOrigin.position, projectileOrigin.rotation * Quaternion.Euler(0, 0, 7));
+            projectilePool.GetInstance(projectileOrigin.position, projectileOrigin.rotation * Quaternion.Euler(0, 0, -7));
+            break;
+
+		case 3:
 			projectilePool.GetInstance (projectileOrigin.position, projectileOrigin.rotation);
 			projectilePool.GetInstance (projectileOrigin.position, projectileOrigin.rotation * Quaternion.Euler(0,0,7));
 			projectilePool.GetInstance (projectileOrigin.position, projectileOrigin.rotation * Quaternion.Euler(0,0,-7));
