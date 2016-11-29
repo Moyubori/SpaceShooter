@@ -7,7 +7,7 @@ public class Projectile : InflictingDamage {
 	//public int damage = 10;
 
 	[SerializeField]
-	private Renderer renderer;
+	new private Renderer renderer;
 
 	void CheckIfOutOfCamera(){
 		// that is good enough, right?

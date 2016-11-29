@@ -42,18 +42,19 @@ public class EnemyController : Enemy {
 	void Awake(){
 		defaultHealth = health;
 		defaultFirerate = firerate;
-		weapon = transform.Find ("WeaponSlot").GetChild (0).GetComponent<Weapon> ();
+		weapon = transform.Find ("Weapon").GetComponent<Weapon> ();
 	}
 
 	void Start(){
 		weapon.projectilePool = GameObject.FindWithTag ("ObjectPools").transform.FindChild ("EnemyProjectiles").GetComponent<ObjectPool> ();
-		weapon.projectileOrigin = transform.FindChild ("WeaponSlot");
+		weapon.projectileOrigin = transform.FindChild ("Weapon");
 	}
 	
 	void Update (){
 		fireTimer += Time.deltaTime;
 		if (fireTimer >= 1 / firerate) {
-			weapon.Shoot ();
+			SpriteRenderer spriteRenderer = transform.Find ("Sprite").GetComponent<SpriteRenderer> ();
+			weapon.Shoot (spriteRenderer.bounds);
 			fireTimer = 0;
 		}
 	}

@@ -57,10 +57,13 @@
      <Compile Include="Assets\Scripts\Events\Level1.cs" />
      <Compile Include="Assets\Scripts\Events\Level2.cs" />
      <Compile Include="Assets\Scripts\Events\Level3.cs" />
+     <Compile Include="Assets\Scripts\Events\LevelEvent.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Asteroid.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\AsteroidSpawner.cs" />
-     <Compile Include="Assets\Scripts\GameObjectScripts\DefaultWeapon.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\GameObjectScripts\Weapons\FanWeapon.cs" />
+     <Compile Include="Assets\Scripts\GameObjectScripts\Weapons\StraightWeapon.cs" />
+     <Compile Include="Assets\Scripts\GameObjectScripts\Weapons\Weapon.cs" />
      <Compile Include="Assets\Scripts\General\AbstractClasses.cs" />
      <Compile Include="Assets\Scripts\General\FollowCamera.cs" />
      <Compile Include="Assets\Scripts\General\ObjectBoundaries.cs" />
