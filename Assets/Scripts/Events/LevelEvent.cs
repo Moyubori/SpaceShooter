@@ -14,11 +14,13 @@ public abstract class LevelEvent : Event {
 
 	protected abstract IEnumerator spawnEnemies ();
 	protected Transform spawnEnemy() {
-		Transform result = enemyPool.GetInstance();
+		//set position, so the enemy won't be visible during first frame
+		Transform result = enemyPool.GetInstance(new Vector3 (100, 100, 0));
 		enemies.Add (result);
 		return result;
 	}
 
+	//wait for all enemies to become inactive
 	private IEnumerator waitForLevelEnd() {
 		while (enemies.Count > 0) {
 			for(int i=0; i<enemies.Count; i++) {

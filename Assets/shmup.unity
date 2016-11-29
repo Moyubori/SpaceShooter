@@ -1532,7 +1532,6 @@ GameObject:
   - 114: {fileID: 976209407}
   - 114: {fileID: 976209406}
   - 114: {fileID: 976209405}
-  - 114: {fileID: 976209404}
   - 114: {fileID: 976209403}
   m_Layer: 0
   m_Name: Level2
@@ -1581,29 +1580,9 @@ MonoBehaviour:
   pathColor: {r: 0.24244538, g: 0.42647058, b: 0.1222967, a: 1}
   nodes:
   - {x: 15, y: -5, z: 0}
-  - {x: 19, y: 0.021231651, z: 0}
+  - {x: 17, y: -3, z: 0}
   - {x: 15, y: 5, z: 0}
   nodeCount: 3
-  initialized: 1
-  initialName: New Path 1
-  pathVisible: 1
---- !u!114 &976209404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 976209400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: Level_2_move2
-  pathColor: {r: 0.24244538, g: 0.42647058, b: 0.1222967, a: 1}
-  nodes:
-  - {x: 15, y: 0, z: 0}
-  - {x: 15, y: -5, z: 0}
-  nodeCount: 2
   initialized: 1
   initialName: New Path 1
   pathVisible: 1
@@ -1622,8 +1601,9 @@ MonoBehaviour:
   pathColor: {r: 0.24244538, g: 0.42647058, b: 0.1222967, a: 1}
   nodes:
   - {x: 15, y: 5, z: 0}
-  - {x: 15, y: 0, z: 0}
-  nodeCount: 2
+  - {x: 12, y: 3, z: 0}
+  - {x: 15, y: -5, z: 0}
+  nodeCount: 3
   initialized: 1
   initialName: New Path 1
   pathVisible: 1
@@ -2252,7 +2232,7 @@ Prefab:
     - target: {fileID: 114000010078854492, guid: 722176e2bb809854d819058e85ab77f0,
         type: 2}
       propertyPath: weaponLevel
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 722176e2bb809854d819058e85ab77f0, type: 2}
@@ -2468,9 +2448,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventArray:
-  - {fileID: 534726785}
+  - {fileID: 976209401}
   - {fileID: 976209401}
   - {fileID: 1425211143}
+  - {fileID: 1724745629}
 --- !u!1 &1676251299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,6 +2549,7 @@ Transform:
   - {fileID: 534726784}
   - {fileID: 976209402}
   - {fileID: 1425211142}
+  - {fileID: 1724745627}
   m_Father: {fileID: 1662099940}
   m_RootOrder: 0
 --- !u!1 &1702612997
@@ -2623,6 +2605,240 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 914637448}
   m_GameObject: {fileID: 1702612997}
+--- !u!1 &1724745626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1724745627}
+  - 114: {fileID: 1724745629}
+  - 114: {fileID: 1724745628}
+  - 114: {fileID: 1724745631}
+  - 114: {fileID: 1724745630}
+  - 114: {fileID: 1724745633}
+  - 114: {fileID: 1724745632}
+  - 114: {fileID: 1724745637}
+  - 114: {fileID: 1724745636}
+  - 114: {fileID: 1724745635}
+  - 114: {fileID: 1724745634}
+  m_Layer: 0
+  m_Name: Level4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1724745627
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724745626}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1686259656}
+  m_RootOrder: 3
+--- !u!114 &1724745628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724745626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Level_4_enter
+  pathColor: {r: 0.034482718, g: 1, b: 0, a: 1}
+  nodes:
+  - {x: 22, y: 0, z: 0}
+  - {x: 17, y: 0, z: 0}
+  nodeCount: 2
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
+--- !u!114 &1724745629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724745626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8823a3bd65ed320409a1b0830eebd197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPool: {fileID: 2094992879}
+--- !u!114 &1724745630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724745626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Level_4_divide_2
+  pathColor: {r: 0.40784317, g: 0, b: 1, a: 1}
+  nodes:
+  - {x: 17, y: 0, z: 0}
+  - {x: 10, y: 0, z: 0}
+  - {x: 10, y: 3, z: 0}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
+--- !u!114 &1724745631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724745626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Level_4_divide_1
+  pathColor: {r: 0.40784317, g: 0, b: 1, a: 1}
+  nodes:
+  - {x: 17, y: 0, z: 0}
+  - {x: 10, y: 0, z: 0}
+  - {x: 10, y: 7, z: 0}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
+--- !u!114 &1724745632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724745626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Level_4_divide_4
+  pathColor: {r: 0.40784317, g: 0, b: 1, a: 1}
+  nodes:
+  - {x: 17, y: 0, z: 0}
+  - {x: 10, y: 0, z: 0}
+  - {x: 10, y: -7, z: 0}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
+--- !u!114 &1724745633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724745626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Level_4_divide_3
+  pathColor: {r: 0.40784317, g: 0, b: 1, a: 1}
+  nodes:
+  - {x: 17, y: 0, z: 0}
+  - {x: 10, y: 0, z: 0}
+  - {x: 10, y: -3, z: 0}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
+--- !u!114 &1724745634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724745626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Level_4_cruise_4
+  pathColor: {r: 1, g: 0.59999996, b: 0, a: 1}
+  nodes:
+  - {x: 10, y: -7, z: 0}
+  - {x: 15, y: -6, z: 0}
+  nodeCount: 2
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
+--- !u!114 &1724745635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724745626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Level_4_cruise_3
+  pathColor: {r: 1, g: 0.59999996, b: 0, a: 1}
+  nodes:
+  - {x: 10, y: -3, z: 0}
+  - {x: 15, y: -2, z: 0}
+  nodeCount: 2
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
+--- !u!114 &1724745636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724745626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Level_4_cruise_2
+  pathColor: {r: 1, g: 0.59999996, b: 0, a: 1}
+  nodes:
+  - {x: 10, y: 3, z: 0}
+  - {x: 15, y: 2, z: 0}
+  nodeCount: 2
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
+--- !u!114 &1724745637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724745626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Level_4_cruise_1
+  pathColor: {r: 1, g: 0.59999996, b: 0, a: 1}
+  nodes:
+  - {x: 10, y: 7, z: 0}
+  - {x: 15, y: 6, z: 0}
+  nodeCount: 2
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
 --- !u!1 &1753579968
 GameObject:
   m_ObjectHideFlags: 0

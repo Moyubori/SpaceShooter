@@ -9,7 +9,7 @@ public class Level2 : LevelEvent {
 		for (int i = 0; i < ENEMY_COUNT; i++) {
 			Transform enemy = spawnEnemy ();
 			enemy.GetComponent<MovementController>().QueuePath("Level_2_enter"+(i + 1), 1f, "none");
-			enemy.GetComponent<MovementController>().QueuePath("Level_2_move"+ (i + 1), 4f, "reverse", 2);
+			if(i != 1) enemy.GetComponent<MovementController>().QueuePath("Level_2_move"+ (i + 1), 2.5f, "reverse", 1);
 		}
 		yield return new WaitForSeconds (0);
 	}

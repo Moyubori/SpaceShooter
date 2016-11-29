@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Events\Level1.cs" />
      <Compile Include="Assets\Scripts\Events\Level2.cs" />
      <Compile Include="Assets\Scripts\Events\Level3.cs" />
+     <Compile Include="Assets\Scripts\Events\Level4.cs" />
      <Compile Include="Assets\Scripts\Events\LevelEvent.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Asteroid.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\AsteroidSpawner.cs" />
