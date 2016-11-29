@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AbstractClasses : MonoBehaviour {}
-
 public abstract class Enemy : MonoBehaviour {
 
 	public int health {
@@ -35,11 +33,6 @@ public abstract class Weapon : MonoBehaviour {
 
 public abstract class BackgroundController : MonoBehaviour {
 	new public Camera camera;
-
-	private Vector3 previousPosition;
-	void Start () {
-		previousPosition = transform.position;
-	}
 
 	void Update () {
 		float offset = getOffset();

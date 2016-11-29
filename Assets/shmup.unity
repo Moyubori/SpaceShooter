@@ -2350,7 +2350,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1662099940}
   - 114: {fileID: 1662099941}
-  - 114: {fileID: 1662099942}
   - 114: {fileID: 1662099944}
   m_Layer: 0
   m_Name: GameMaster
@@ -2386,17 +2385,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1864232006}
   gameField: {fileID: 1551208867}
---- !u!114 &1662099942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1662099939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 839482cda9e58402a8a39da4c978e3a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1662099944
 MonoBehaviour:
   m_ObjectHideFlags: 0
