@@ -50,7 +50,7 @@ public class Asteroid : InflictingDamage {
 	}
 
 	void Update(){
-		sprite.Rotate (0, 0, calculatedRotation);
+		sprite.Rotate (0, 0, calculatedRotation * Time.timeScale);
 
 		if (!enteredScreen && sprite.GetComponent<SpriteRenderer> ().isVisible) {
 			enteredScreen = true;
