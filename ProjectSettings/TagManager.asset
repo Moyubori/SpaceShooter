@@ -12,6 +12,7 @@ TagManager:
   - ObjectPools
   - Weapon
   - Obstacle
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
