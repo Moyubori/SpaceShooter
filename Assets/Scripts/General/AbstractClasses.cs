@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-public class AbstractClasses : MonoBehaviour {}
+using System.Collections;
 
 public abstract class Enemy : MonoBehaviour {
 
@@ -17,29 +16,12 @@ public abstract class Enemy : MonoBehaviour {
 
 	public abstract void TakeDamage (int damage);
 }
-
-
-
-public abstract class Weapon : MonoBehaviour {
-
-	public ObjectPool projectilePool;
-	public Transform projectileOrigin;
-
-	[SerializeField]
-	protected int weaponLevel = 0;
-
-	public abstract void Shoot ();
-}
+	
 
 
 
 public abstract class BackgroundController : MonoBehaviour {
 	new public Camera camera;
-
-	private Vector3 previousPosition;
-	void Start () {
-		previousPosition = transform.position;
-	}
 
 	void Update () {
 		float offset = getOffset();
@@ -69,8 +51,9 @@ public abstract class InflictingDamage : MonoBehaviour {
 
 }
 
-public abstract class LevelEvent : MonoBehaviour {
+public abstract class Event : MonoBehaviour {
 
+	//event state fields
 	public bool running{
 		get { return _running; }
 	}
@@ -81,6 +64,7 @@ public abstract class LevelEvent : MonoBehaviour {
 	}
 	private bool _finished = false;
 
+	//event lifecycle
 	public void LaunchEvent(){
 		_running = true;
 		StartCoroutine(EventActions ());

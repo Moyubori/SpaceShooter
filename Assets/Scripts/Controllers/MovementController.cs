@@ -9,6 +9,7 @@ public class MovementController : MonoBehaviour {
 		public Vector3[] path;
 		public float time;
 		public string loop;
+        public float delay;
 
 		private bool isReversed = false;
 
@@ -26,13 +27,14 @@ public class MovementController : MonoBehaviour {
 	private Queue<TweenProperties> tweenQueue;
 	private bool tweenInProgress = false;
 
-	// adds a new path with given properties into queue
-	public void QueuePath (string pathName, float time, string loop = "none"){
+    // adds a new path with given properties into queue
+    public void QueuePath(string pathName, float time, string loop = "none", float delay = 0f){
 		TweenProperties newTween = new TweenProperties ();
 		newTween.pathName = pathName;
 		newTween.path = iTweenPath.GetPath(pathName);
 		newTween.time = time;
 		newTween.loop = loop;
+        newTween.delay = delay;
 		tweenQueue.Enqueue (newTween);
 	}
 
@@ -57,7 +59,7 @@ public class MovementController : MonoBehaviour {
 	IEnumerator Animate(){
 		if (tweenQueue.Count > 0) {
 			TweenProperties tempProperties = tweenQueue.Dequeue ();
-			iTween.MoveTo (gameObject, iTween.Hash("path", tempProperties.path, "time", tempProperties.time, "movetopath", false, "easeType", "linear"));
+			iTween.MoveTo (gameObject, iTween.Hash("path", tempProperties.path, "time", tempProperties.time, "movetopath", false, "easeType", "linear", "delay", tempProperties.delay));
 
 			// reinsert tween back into queue if it's looping
 			if (tempProperties.loop == "reverse") {

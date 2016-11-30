@@ -80,9 +80,9 @@ public class PlayerController : MonoBehaviour {
 		// sets healthbar to the initial value
 		healthBar.SetHealth (health);
 
-		weapon = transform.Find ("WeaponSlot").GetChild (0).GetComponent<Weapon>();
+		weapon = transform.Find ("Weapon").GetComponent<Weapon>();
 		if (weapon == null) {
-			Debug.Log ("No weapon");
+			Debug.Log ("No player weapon.");
 		}
 	}
 
@@ -127,7 +127,8 @@ public class PlayerController : MonoBehaviour {
 
 
 	private void Shoot(){
-		weapon.Shoot ();
+		SpriteRenderer spriteRenderer = transform.Find ("Sprite").GetComponent<SpriteRenderer> ();
+		weapon.Shoot (spriteRenderer.bounds);
 	}
 
 
