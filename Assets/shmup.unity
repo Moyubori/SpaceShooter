@@ -960,7 +960,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 534726784}
   - 114: {fileID: 534726785}
-  - 114: {fileID: 534726787}
   m_Layer: 0
   m_Name: Level1
   m_TagString: Untagged
@@ -980,7 +979,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1686259656}
-  m_RootOrder: 0
+  m_RootOrder: 3
 --- !u!114 &534726785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,27 +992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 2094992879}
-  enemyOffset: 10
---- !u!114 &534726787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 534726783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: Level_1_enter
-  pathColor: {r: 0.784, g: 0, b: 0, a: 1}
-  nodes:
-  - {x: 23, y: -5, z: 0}
-  - {x: 10, y: -5, z: 0}
-  nodeCount: 2
-  initialized: 1
-  initialName: New Path 1
-  pathVisible: 1
+  enemyOffset: 5
 --- !u!1 &583859182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,7 +2003,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 976209402}
   - 114: {fileID: 976209401}
-  - 114: {fileID: 976209408}
   - 114: {fileID: 976209405}
   - 114: {fileID: 976209403}
   m_Layer: 0
@@ -2046,6 +2024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 2094992879}
+  enemyOffset: 5
 --- !u!4 &976209402
 Transform:
   m_ObjectHideFlags: 0
@@ -2058,7 +2037,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1686259656}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &976209403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2070,12 +2049,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_2_moveDown
+  pathName: 2_down
   pathColor: {r: 0.24244538, g: 0.42647058, b: 0.1222967, a: 1}
   nodes:
-  - {x: 15, y: -5, z: 0}
-  - {x: 17, y: -3, z: 0}
-  - {x: 15, y: 5, z: 0}
+  - {x: 8, y: -5, z: 0}
+  - {x: 10, y: -3, z: 0}
+  - {x: 8, y: 5, z: 0}
   nodeCount: 3
   initialized: 1
   initialName: New Path 1
@@ -2091,33 +2070,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_2_moveUp
+  pathName: 2_up
   pathColor: {r: 0.24244538, g: 0.42647058, b: 0.1222967, a: 1}
   nodes:
-  - {x: 15, y: 5, z: 0}
-  - {x: 12, y: 3, z: 0}
-  - {x: 15, y: -5, z: 0}
+  - {x: 8, y: 5, z: 0}
+  - {x: 5, y: 3, z: 0}
+  - {x: 8, y: -5, z: 0}
   nodeCount: 3
-  initialized: 1
-  initialName: New Path 1
-  pathVisible: 1
---- !u!114 &976209408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 976209400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: Level_2_enter
-  pathColor: {r: 1, g: 0, b: 0, a: 1}
-  nodes:
-  - {x: 23, y: 0, z: 0}
-  - {x: 15, y: 0, z: 0}
-  nodeCount: 2
   initialized: 1
   initialName: New Path 1
   pathVisible: 1
@@ -2811,7 +2770,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1686259656}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &1425211143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2837,7 +2796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_3_loop
+  pathName: 3_loop
   pathColor: {r: 1, g: 0, b: 0, a: 1}
   nodes:
   - {x: 14, y: 2, z: 0}
@@ -2860,7 +2819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_3_enter
+  pathName: 3_enter
   pathColor: {r: 0.15862082, g: 1, b: 0, a: 1}
   nodes:
   - {x: 18, y: 13, z: 0}
@@ -3234,6 +3193,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1686259656}
+  - 114: {fileID: 1686259657}
   m_Layer: 0
   m_Name: Levels
   m_TagString: Untagged
@@ -3252,12 +3212,32 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 534726784}
-  - {fileID: 976209402}
-  - {fileID: 1425211142}
   - {fileID: 1724745627}
+  - {fileID: 1425211142}
+  - {fileID: 976209402}
+  - {fileID: 534726784}
   m_Father: {fileID: 1662099940}
   m_RootOrder: 0
+--- !u!114 &1686259657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1686259655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: simpleEnter
+  pathColor: {r: 1, g: 0, b: 0, a: 1}
+  nodes:
+  - {x: 23, y: 0, z: 0}
+  - {x: 8, y: 0, z: 0}
+  nodeCount: 2
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
 --- !u!1 &1702612997
 GameObject:
   m_ObjectHideFlags: 0
@@ -3320,14 +3300,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 1724745627}
   - 114: {fileID: 1724745629}
-  - 114: {fileID: 1724745628}
   - 114: {fileID: 1724745631}
   - 114: {fileID: 1724745630}
   - 114: {fileID: 1724745633}
   - 114: {fileID: 1724745632}
   - 114: {fileID: 1724745637}
-  - 114: {fileID: 1724745636}
-  - 114: {fileID: 1724745635}
   - 114: {fileID: 1724745634}
   m_Layer: 0
   m_Name: Level4
@@ -3348,27 +3325,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1686259656}
-  m_RootOrder: 3
---- !u!114 &1724745628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1724745626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: Level_4_enter
-  pathColor: {r: 0.034482718, g: 1, b: 0, a: 1}
-  nodes:
-  - {x: 22, y: 0, z: 0}
-  - {x: 17, y: 0, z: 0}
-  nodeCount: 2
-  initialized: 1
-  initialName: New Path 1
-  pathVisible: 1
+  m_RootOrder: 0
 --- !u!114 &1724745629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3392,12 +3349,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_4_divide_2
+  pathName: 4_divide_2
   pathColor: {r: 0.40784317, g: 0, b: 1, a: 1}
   nodes:
-  - {x: 17, y: 0, z: 0}
-  - {x: 10, y: 0, z: 0}
-  - {x: 10, y: 3, z: 0}
+  - {x: 9, y: 0, z: 0}
+  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: 3, z: 0}
   nodeCount: 3
   initialized: 1
   initialName: New Path 1
@@ -3413,12 +3370,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_4_divide_1
+  pathName: 4_divide_1
   pathColor: {r: 0.40784317, g: 0, b: 1, a: 1}
   nodes:
-  - {x: 17, y: 0, z: 0}
-  - {x: 10, y: 0, z: 0}
-  - {x: 10, y: 7, z: 0}
+  - {x: 9, y: 0, z: 0}
+  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: 7, z: 0}
   nodeCount: 3
   initialized: 1
   initialName: New Path 1
@@ -3434,12 +3391,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_4_divide_4
+  pathName: 4_divide_4
   pathColor: {r: 0.40784317, g: 0, b: 1, a: 1}
   nodes:
-  - {x: 17, y: 0, z: 0}
-  - {x: 10, y: 0, z: 0}
-  - {x: 10, y: -7, z: 0}
+  - {x: 9, y: 0, z: 0}
+  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: -7, z: 0}
   nodeCount: 3
   initialized: 1
   initialName: New Path 1
@@ -3455,12 +3412,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_4_divide_3
+  pathName: 4_divide_3
   pathColor: {r: 0.40784317, g: 0, b: 1, a: 1}
   nodes:
-  - {x: 17, y: 0, z: 0}
-  - {x: 10, y: 0, z: 0}
-  - {x: 10, y: -3, z: 0}
+  - {x: 9, y: 0, z: 0}
+  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: -3, z: 0}
   nodeCount: 3
   initialized: 1
   initialName: New Path 1
@@ -3476,51 +3433,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_4_cruise_4
+  pathName: 4_cruise_down
   pathColor: {r: 1, g: 0.59999996, b: 0, a: 1}
   nodes:
-  - {x: 10, y: -7, z: 0}
-  - {x: 15, y: -6, z: 0}
-  nodeCount: 2
-  initialized: 1
-  initialName: New Path 1
-  pathVisible: 1
---- !u!114 &1724745635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1724745626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: Level_4_cruise_3
-  pathColor: {r: 1, g: 0.59999996, b: 0, a: 1}
-  nodes:
-  - {x: 10, y: -3, z: 0}
-  - {x: 15, y: -2, z: 0}
-  nodeCount: 2
-  initialized: 1
-  initialName: New Path 1
-  pathVisible: 1
---- !u!114 &1724745636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1724745626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: Level_4_cruise_2
-  pathColor: {r: 1, g: 0.59999996, b: 0, a: 1}
-  nodes:
-  - {x: 10, y: 3, z: 0}
-  - {x: 15, y: 2, z: 0}
+  - {x: 9, y: -7, z: 0}
+  - {x: 1, y: -6, z: 0}
   nodeCount: 2
   initialized: 1
   initialName: New Path 1
@@ -3536,11 +3453,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_4_cruise_1
+  pathName: 4_cruise_up
   pathColor: {r: 1, g: 0.59999996, b: 0, a: 1}
   nodes:
-  - {x: 10, y: 7, z: 0}
-  - {x: 15, y: 6, z: 0}
+  - {x: 1, y: 7, z: 0}
+  - {x: 6, y: 6, z: 0}
   nodeCount: 2
   initialized: 1
   initialName: New Path 1

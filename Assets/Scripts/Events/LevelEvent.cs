@@ -8,11 +8,11 @@ public abstract class LevelEvent : Event {
 	private List<Transform> enemies = new List<Transform>();
 
 	override protected IEnumerator EventActions() {
-		yield return spawnEnemies ();
+		spawnEnemies ();
 		yield return waitForLevelEnd ();
 	}
 
-	protected abstract IEnumerator spawnEnemies ();
+	protected abstract void spawnEnemies ();
 	protected Transform spawnEnemy() {
 		//set position, so the enemy won't be visible during first frame
 		Transform result = enemyPool.GetInstance(new Vector3 (100, 100, 0));
