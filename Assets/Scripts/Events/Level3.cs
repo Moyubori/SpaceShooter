@@ -10,8 +10,8 @@ public class Level3 : LevelEvent {
 	override protected IEnumerator spawnEnemies () {
 		for (int i = 0; i < enemiesToSpawn; i++) {
 			Transform enemy = spawnEnemy ();
-			enemy.GetComponent<MovementController>().QueuePath("Level_3_enter", 4f, "none");
-			enemy.GetComponent<MovementController>().QueuePath("Level_3_loop",  4f, "plain");
+//			enemy.GetComponent<MovementController>().QueuePath("Level_3_enter", 4f, "none");
+//			enemy.GetComponent<MovementController>().QueuePath("Level_3_loop",  4f, "plain");
 			yield return new WaitForSeconds(spawnInterval);
 		}
 		yield return new WaitForSeconds (0);

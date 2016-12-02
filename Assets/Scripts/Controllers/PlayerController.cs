@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider){
 		// check if collision should deal damage
 		if (collider.tag == "ProjectilesEnemy" || collider.tag == "Obstacle") {
-			Debug.Log (collider.tag);
+			//Debug.Log (collider.tag);
 			TakeDamage (collider.GetComponent<InflictingDamage> ().damage);
 			collider.gameObject.SetActive (false);
 		}

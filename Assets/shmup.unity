@@ -961,7 +961,6 @@ GameObject:
   - 4: {fileID: 534726784}
   - 114: {fileID: 534726785}
   - 114: {fileID: 534726787}
-  - 114: {fileID: 534726786}
   m_Layer: 0
   m_Name: Level1
   m_TagString: Untagged
@@ -994,26 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 2094992879}
---- !u!114 &534726786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 534726783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: Level_1_enter2
-  pathColor: {r: 0.78431374, g: 0, b: 0, a: 1}
-  nodes:
-  - {x: 23, y: 5, z: 0}
-  - {x: 10, y: 5, z: 0}
-  nodeCount: 2
-  initialized: 1
-  initialName: New Path 2
-  pathVisible: 1
+  enemyOffset: 10
 --- !u!114 &534726787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,7 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_1_enter1
+  pathName: Level_1_enter
   pathColor: {r: 0.784, g: 0, b: 0, a: 1}
   nodes:
   - {x: 23, y: -5, z: 0}
@@ -2045,8 +2025,6 @@ GameObject:
   - 4: {fileID: 976209402}
   - 114: {fileID: 976209401}
   - 114: {fileID: 976209408}
-  - 114: {fileID: 976209407}
-  - 114: {fileID: 976209406}
   - 114: {fileID: 976209405}
   - 114: {fileID: 976209403}
   m_Layer: 0
@@ -2092,7 +2070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_2_move3
+  pathName: Level_2_moveDown
   pathColor: {r: 0.24244538, g: 0.42647058, b: 0.1222967, a: 1}
   nodes:
   - {x: 15, y: -5, z: 0}
@@ -2113,53 +2091,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_2_move1
+  pathName: Level_2_moveUp
   pathColor: {r: 0.24244538, g: 0.42647058, b: 0.1222967, a: 1}
   nodes:
   - {x: 15, y: 5, z: 0}
   - {x: 12, y: 3, z: 0}
   - {x: 15, y: -5, z: 0}
   nodeCount: 3
-  initialized: 1
-  initialName: New Path 1
-  pathVisible: 1
---- !u!114 &976209406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 976209400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: Level_2_enter3
-  pathColor: {r: 1, g: 0, b: 0, a: 1}
-  nodes:
-  - {x: 23, y: -5, z: 0}
-  - {x: 15, y: -5, z: 0}
-  nodeCount: 2
-  initialized: 1
-  initialName: New Path 1
-  pathVisible: 1
---- !u!114 &976209407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 976209400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: Level_2_enter2
-  pathColor: {r: 1, g: 0, b: 0, a: 1}
-  nodes:
-  - {x: 23, y: 0, z: 0}
-  - {x: 15, y: 0, z: 0}
-  nodeCount: 2
   initialized: 1
   initialName: New Path 1
   pathVisible: 1
@@ -2174,11 +2112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Level_2_enter1
+  pathName: Level_2_enter
   pathColor: {r: 1, g: 0, b: 0, a: 1}
   nodes:
-  - {x: 23, y: 5, z: 0}
-  - {x: 15, y: 5, z: 0}
+  - {x: 23, y: 0, z: 0}
+  - {x: 15, y: 0, z: 0}
   nodeCount: 2
   initialized: 1
   initialName: New Path 1
@@ -3219,11 +3157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3aabc352be640dfa7e2a7eba299aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventArray:
-  - {fileID: 976209401}
-  - {fileID: 976209401}
-  - {fileID: 1425211143}
-  - {fileID: 1724745629}
+  levels: {fileID: 1686259656}
 --- !u!1 &1676251299
 GameObject:
   m_ObjectHideFlags: 0

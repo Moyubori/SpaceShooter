@@ -19,6 +19,11 @@ public abstract class LevelEvent : Event {
 		enemies.Add (result);
 		return result;
 	}
+	protected Transform spawnEnemy(params TweenProperties[] tweens) {
+		Transform result = spawnEnemy ();
+		result.GetComponent<MovementController> ().QueueTweens (tweens);
+		return result;
+	}
 
 	//wait for all enemies to become inactive
 	private IEnumerator waitForLevelEnd() {

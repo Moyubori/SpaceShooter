@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Level1 : LevelEvent {
-	
-	override protected IEnumerator spawnEnemies () {
-		Transform enemy1 = spawnEnemy ();
-		enemy1.GetComponent<MovementController>().QueuePath("Level_1_enter1", 4f);
+	public float enemyOffset = 10.0f;
 
-		Transform enemy2 = spawnEnemy ();
-		enemy2.GetComponent<MovementController>().QueuePath("Level_1_enter2", 4f);
+	override protected IEnumerator spawnEnemies () {
+		SingleTween tween = new SingleTween ("Level_1_enter", 3f);
+
+		spawnEnemy (tween);
+		spawnEnemy (tween.OffsetByVector(new Vector3(0, enemyOffset, 0)));
 
 		yield return new WaitForSeconds (0);
 	}	

@@ -3,39 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class MovementController : MonoBehaviour {
-
-	private class TweenProperties {
-		public string pathName;
-		public Vector3[] path;
-		public float time;
-		public string loop;
-        public float delay;
-
-		private bool isReversed = false;
-
-		public void ReversePath(){
-			if (isReversed) {
-				isReversed = false;
-				path = iTweenPath.GetPath (pathName);
-			} else {
-				isReversed = true;
-				path = iTweenPath.GetPathReversed (pathName);
-			}
-		}
-	}
-
 	private Queue<TweenProperties> tweenQueue;
 	private bool tweenInProgress = false;
 
-    // adds a new path with given properties into queue
-    public void QueuePath(string pathName, float time, string loop = "none", float delay = 0f){
-		TweenProperties newTween = new TweenProperties ();
-		newTween.pathName = pathName;
-		newTween.path = iTweenPath.GetPath(pathName);
-		newTween.time = time;
-		newTween.loop = loop;
-        newTween.delay = delay;
-		tweenQueue.Enqueue (newTween);
+	public void QueueTweens (params TweenProperties[] tweens) {
+		foreach (TweenProperties tween in tweens) {
+			tweenQueue.Enqueue (tween);
+		}
 	}
 
 	void OnDisable(){
@@ -51,6 +25,7 @@ public class MovementController : MonoBehaviour {
 			StartCoroutine (Animate ());
 		}
 	}
+		
 
 	void Awake(){
 		tweenQueue = new Queue<TweenProperties> ();
@@ -58,18 +33,9 @@ public class MovementController : MonoBehaviour {
 
 	IEnumerator Animate(){
 		if (tweenQueue.Count > 0) {
-			TweenProperties tempProperties = tweenQueue.Dequeue ();
-			iTween.MoveTo (gameObject, iTween.Hash("path", tempProperties.path, "time", tempProperties.time, "movetopath", false, "easeType", "linear", "delay", tempProperties.delay));
-
-			// reinsert tween back into queue if it's looping
-			if (tempProperties.loop == "reverse") {
-				tempProperties.ReversePath ();
-				tweenQueue.Enqueue (tempProperties);
-			} else if (tempProperties.loop == "plain"){
-				tweenQueue.Enqueue (tempProperties);
-			}
-
-			yield return new WaitForSeconds (tempProperties.time);
+			TweenProperties tween = tweenQueue.Dequeue ();
+			tween.Apply (gameObject, tweenQueue);
+			yield return new WaitForSeconds (tween.getDuration());
 		}
 		tweenInProgress = false;
 	}

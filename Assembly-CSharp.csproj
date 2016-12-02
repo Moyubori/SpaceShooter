@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\General\FollowCamera.cs" />
      <Compile Include="Assets\Scripts\General\ObjectBoundaries.cs" />
      <Compile Include="Assets\Scripts\General\ObjectPool.cs" />
+     <Compile Include="Assets\Scripts\General\TweenProperties.cs" />
      <Compile Include="Assets\Scripts\General\iTween.cs" />
      <Compile Include="Assets\Scripts\General\iTweenPath.cs" />
  <Reference Include="UnityEngine.UI">
