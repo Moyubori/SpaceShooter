@@ -60,7 +60,11 @@
      <Compile Include="Assets\Scripts\Events\Level3.cs" />
      <Compile Include="Assets\Scripts\Events\Level4.cs" />
      <Compile Include="Assets\Scripts\Events\Level5.cs" />
+     <Compile Include="Assets\Scripts\Events\Level6.cs" />
+     <Compile Include="Assets\Scripts\Events\Level7.cs" />
+     <Compile Include="Assets\Scripts\Events\Level8.cs" />
      <Compile Include="Assets\Scripts\Events\LevelEvent.cs" />
+     <Compile Include="Assets\Scripts\Events\LevelManager.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Asteroid.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\AsteroidSpawner.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Projectile.cs" />

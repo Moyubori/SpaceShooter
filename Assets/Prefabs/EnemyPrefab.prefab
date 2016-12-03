@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePool: {fileID: 0}
   projectileOrigin: {fileID: 0}
-  weaponLevel: 1
+  weaponLevel: 0
 --- !u!212 &212000012916992918
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -3,13 +3,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public abstract class TweenProperties : ICloneable {
+public abstract class TweenProperties {
 	public float delay;
 
-	public abstract object Clone();
+	public abstract TweenProperties Clone ();
 	//schedules all tweens to iTween.MoveTo, may enqueue in the event of loops
 	public abstract void Apply (GameObject target, Queue<TweenProperties> tweenQueue);
-	public abstract void Reverse ();
+	public abstract TweenProperties Reverse ();
 	public abstract float getDuration();
 
 	//offsetting returns new instance with all points translated
@@ -37,30 +37,33 @@ public abstract class TweenProperties : ICloneable {
 public class SingleTween : TweenProperties {
 	public Vector3[] path;
 	public float time;
+	public bool moveToPath;
 
-
-	public override object Clone() {
+	public override TweenProperties Clone() {
 		SingleTween result = new SingleTween ();
 		result.delay = delay;
 		result.path = (Vector3[])path.Clone ();
 		result.time = time;
+		result.moveToPath = moveToPath;
 		return result;
 	}
 	public SingleTween() {}
-	public SingleTween(string pathName, float time = 1.0f, float delay = 0.0f) {
+	public SingleTween(string pathName, float time = 1.0f, float delay = 0.0f, bool moveToPath = false) {
 		this.path = iTweenPath.GetPath(pathName);
 		this.time = time;
 		this.delay = delay;
+		this.moveToPath = moveToPath;
 	}
 
 	public override void Apply (GameObject target, Queue<TweenProperties> tweenQueue) {
-		Hashtable args = iTween.Hash ("path", path, "time", time, "delay", delay, "movetopath", true, "easeType", "linear");
+		Hashtable args = iTween.Hash ("path", path, "time", time, "delay", delay, "movetopath", moveToPath, "easeType", "linear");
 		iTween.MoveTo (target, args);
 	}
 
-	public override void Reverse(){
+	public override TweenProperties Reverse(){
 		path = (Vector3[]) path.Clone ();
 		System.Array.Reverse (path);
+		return this;
 	}
 
 	public override float getDuration() {
@@ -68,12 +71,11 @@ public class SingleTween : TweenProperties {
 	}
 		
 	public override TweenProperties OffsetByXY (float offsetX, float offsetY) {
-		SingleTween result = (SingleTween) this.Clone ();
-		for (int i = 0; i < result.path.Length; i++) {
-			result.path [i].x += offsetX;
-			result.path [i].y += offsetY;
+		for (int i = 0; i < path.Length; i++) {
+			path [i].x += offsetX;
+			path [i].y += offsetY;
 		}
-		return result;
+		return this;
 	}
 }
 
@@ -90,7 +92,7 @@ public class LoopTween : TweenProperties {
 	private TweenProperties[] tweens;
 	private Loop loop;
 
-	public override object Clone() {
+	public override TweenProperties Clone() {
 		TweenProperties[] tweens = new TweenProperties[this.tweens.Length];
 		for(int i=0; i<tweens.Length; i++) {
 			tweens [i] = (TweenProperties) this.tweens [i].Clone ();
@@ -135,13 +137,14 @@ public class LoopTween : TweenProperties {
 		}
 	}
 
-	public override void Reverse() {
+	public override TweenProperties Reverse() {
 		foreach (TweenProperties tween in tweens) {
 			tween.Reverse ();
 		}
 
 		tweens = (TweenProperties[]) tweens.Clone ();
 		System.Array.Reverse (tweens);
+		return this;
 	}
 
 	public override float getDuration() {
@@ -153,11 +156,10 @@ public class LoopTween : TweenProperties {
 	}
 
 	public override TweenProperties OffsetByXY (float offsetX, float offsetY) {
-		LoopTween result = (LoopTween) this.Clone ();
-		for (int i = 0; i < result.tweens.Length; i++) {
-			result.tweens[i] = result.tweens[i].OffsetByXY (offsetX, offsetY);
+		for (int i = 0; i < tweens.Length; i++) {
+			tweens[i] = tweens[i].OffsetByXY (offsetX, offsetY);
 		}
-		return result;
+		return this;
 	}
 
 }
@@ -167,4 +169,26 @@ public class LoopTween : TweenProperties {
 
 
 
+public class DelayTween : TweenProperties {
 
+	public override TweenProperties Clone() {
+		return new DelayTween (delay);
+	}
+	public DelayTween (float delay) {
+		this.delay = delay;
+	}
+		
+	public override TweenProperties Reverse () {
+		return this;
+	}
+
+	public override float getDuration() {
+		return delay;
+	}
+		
+	public override TweenProperties OffsetByXY (float offsetX, float offsetY) {
+		return this;
+	}
+
+	public override void Apply (GameObject target, Queue<TweenProperties> tweenQueue) {}
+}

@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Level1 : LevelEvent {
+	public float enterDuration = 3.0f;
 	public float enemyOffset = 5.0f;
 
 	override protected void spawnEnemies () {
-		SingleTween tween = new SingleTween ("simpleEnter", 3f);
+		TweenProperties enter = new SingleTween ("simpleEnter", enterDuration);
 
-		spawnEnemy (tween.OffsetByY(enemyOffset));
-		spawnEnemy (tween.OffsetByY(-enemyOffset));
+		spawnEnemy (enter.Clone().OffsetByY(enemyOffset));
+		spawnEnemy (enter.Clone().OffsetByY(-enemyOffset));
 	}	
 }
