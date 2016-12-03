@@ -33,7 +33,7 @@ public class PauseController : MonoBehaviour {
 	}
 
 	public void Quit(){
-		
+		Application.Quit ();
 	}
 
 	private void HidePaused(){
