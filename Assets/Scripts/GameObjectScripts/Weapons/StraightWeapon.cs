@@ -30,7 +30,6 @@ public class StraightWeapon : Weapon {
 			position += horizontalOffset;
 			projectilePool.GetInstance (position, projectileOrigin.rotation);
 			break;
-			
 		}
 	}
 }
