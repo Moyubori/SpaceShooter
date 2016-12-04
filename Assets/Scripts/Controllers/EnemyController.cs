@@ -47,7 +47,7 @@ public class EnemyController : Enemy {
 
 	void Start(){
 		weapon.projectilePool = GameObject.FindWithTag ("ObjectPools").transform.FindChild ("EnemyProjectiles").GetComponent<ObjectPool> ();
-		weapon.projectileOrigin = transform.FindChild ("Weapon");
+		weapon.projectileOrigin = transform;
 	}
 	
 	void Update (){

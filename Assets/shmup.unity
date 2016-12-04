@@ -3020,15 +3020,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011878868376, guid: 722176e2bb809854d819058e85ab77f0, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000011878868376, guid: 722176e2bb809854d819058e85ab77f0, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000011878868376, guid: 722176e2bb809854d819058e85ab77f0, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000011878868376, guid: 722176e2bb809854d819058e85ab77f0, type: 2}
       propertyPath: m_LocalRotation.w
@@ -3072,6 +3072,14 @@ Prefab:
         type: 2}
       propertyPath: weaponLevel
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011878868376, guid: 722176e2bb809854d819058e85ab77f0, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011878868376, guid: 722176e2bb809854d819058e85ab77f0, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 722176e2bb809854d819058e85ab77f0, type: 2}
