@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class EnemyController : Enemy {
+	public Sprite[] sprites;
 
 	//shots fired per second
 	public float firerate {
@@ -57,5 +58,9 @@ public class EnemyController : Enemy {
 			weapon.Shoot (spriteRenderer.bounds);
 			fireTimer = 0;
 		}
+	}
+
+	void OnEnable() {
+		Debug.Log ("Enable");
 	}
 }

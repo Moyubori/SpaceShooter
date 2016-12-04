@@ -14,6 +14,7 @@ public class ObjectPool : MonoBehaviour {
 			}
 		}
 		Transform newObject = (Transform)Instantiate (objectPrefab.transform, transform);
+		newObject.name = objectPrefab.name + "_" + InstancesActive ();
 		return newObject;
 	}
 

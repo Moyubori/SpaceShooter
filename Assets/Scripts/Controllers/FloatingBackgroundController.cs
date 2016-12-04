@@ -119,7 +119,6 @@ public class FloatingBackgroundController : BackgroundController {
 
 	private void SpawnObject(Vector3 position, Sprite sprite) {
 		Transform instance = backgroundPool.GetInstance ();
-		instance.gameObject.name = "BGSprite_" + sprite.name;
 
 		SpriteRenderer renderer = instance.GetComponent<SpriteRenderer> ();
 		renderer.sprite = sprite;
