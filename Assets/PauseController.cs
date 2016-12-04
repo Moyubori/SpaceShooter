@@ -33,7 +33,7 @@ public class PauseController : MonoBehaviour {
 	}
 
 	public void Quit(){
-		
+		Application.LoadLevel ("main_menu");
 	}
 
 	private void HidePaused(){
