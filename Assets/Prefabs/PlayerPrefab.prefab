@@ -301,6 +301,9 @@ MonoBehaviour:
   maxHealth: 100
   _health: 100
   _lives: 5
+  respawnDelay: 0.5
+  respawnProtectionDuration: 1.6
+  respawnFlickerFrequency: 8
   cameraReference: {fileID: 0}
   healthBar: {fileID: 0}
   livesIcons: {fileID: 0}
@@ -317,10 +320,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e42e936ab9d490598f73caf7282956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _left: {fileID: 53336352, guid: 722176e2bb809854d819058e85ab77f0, type: 2}
-  _right: {fileID: 2037673573, guid: 722176e2bb809854d819058e85ab77f0, type: 2}
-  _top: {fileID: 55019680, guid: 722176e2bb809854d819058e85ab77f0, type: 2}
-  _bottom: {fileID: 55019552, guid: 722176e2bb809854d819058e85ab77f0, type: 2}
+  _left: {fileID: 4000014117571736}
+  _right: {fileID: 4000010476092500}
+  _top: {fileID: 4000011164203944}
+  _bottom: {fileID: 4000010052097496}
 --- !u!114 &114000013624635090
 MonoBehaviour:
   m_ObjectHideFlags: 1

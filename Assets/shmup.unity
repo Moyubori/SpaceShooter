@@ -90,11 +90,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &17668379 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000010476092500, guid: d3afa5e4eb9b01c4a94a5b5e6548c257,
-    type: 2}
-  m_PrefabInternal: {fileID: 1515780805}
 --- !u!1 &31441350
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,11 +639,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 4000011882000166, guid: a84ef0f0b9dbf479ab2e62e520b976bb,
     type: 2}
---- !u!4 &236050141 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000011164203944, guid: d3afa5e4eb9b01c4a94a5b5e6548c257,
-    type: 2}
-  m_PrefabInternal: {fileID: 1515780805}
 --- !u!1 &245146973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,11 +1105,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 493841971}
---- !u!4 &519486372 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000014117571736, guid: d3afa5e4eb9b01c4a94a5b5e6548c257,
-    type: 2}
-  m_PrefabInternal: {fileID: 1515780805}
 --- !u!1 &534726783
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,42 +3652,6 @@ Prefab:
       propertyPath: livesIcons
       value: 
       objectReference: {fileID: 583859184}
-    - target: {fileID: 114000012218447974, guid: d3afa5e4eb9b01c4a94a5b5e6548c257,
-        type: 2}
-      propertyPath: _left
-      value: 
-      objectReference: {fileID: 519486372}
-    - target: {fileID: 4000010052097496, guid: d3afa5e4eb9b01c4a94a5b5e6548c257, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011164203944, guid: d3afa5e4eb9b01c4a94a5b5e6548c257, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010476092500, guid: d3afa5e4eb9b01c4a94a5b5e6548c257, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000014117571736, guid: d3afa5e4eb9b01c4a94a5b5e6548c257, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012218447974, guid: d3afa5e4eb9b01c4a94a5b5e6548c257,
-        type: 2}
-      propertyPath: _right
-      value: 
-      objectReference: {fileID: 17668379}
-    - target: {fileID: 114000012218447974, guid: d3afa5e4eb9b01c4a94a5b5e6548c257,
-        type: 2}
-      propertyPath: _top
-      value: 
-      objectReference: {fileID: 236050141}
-    - target: {fileID: 114000012218447974, guid: d3afa5e4eb9b01c4a94a5b5e6548c257,
-        type: 2}
-      propertyPath: _bottom
-      value: 
-      objectReference: {fileID: 2058612830}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3afa5e4eb9b01c4a94a5b5e6548c257, type: 2}
   m_IsPrefabParent: 0
@@ -4586,11 +4535,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &2058612830 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000010052097496, guid: d3afa5e4eb9b01c4a94a5b5e6548c257,
-    type: 2}
-  m_PrefabInternal: {fileID: 1515780805}
 --- !u!1 &2079420987
 GameObject:
   m_ObjectHideFlags: 0

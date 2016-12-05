@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+	private SpriteRenderer spriteRenderer;
 	//stats
 
 	// setter sets the default value
@@ -56,6 +57,16 @@ public class PlayerController : MonoBehaviour {
 	private int defaultLives;
 
 
+	//respawning fields
+	[Header("Respawning")]
+	public float respawnDelay = 0.5f;
+	public float respawnProtectionDuration = 1.6f;
+	public float respawnFlickerFrequency = 8.0f;
+	private Vector3 defaultPosition;
+	private bool respawnProtection = false; //is player under respawn protection
+
+
+
 	//other stuff
 
 	[Header("Other:")]
@@ -64,7 +75,6 @@ public class PlayerController : MonoBehaviour {
 	public HealthIconsManager livesIcons;
 	public Weapon weapon;
 	public ObjectBoundaries boundaries;
-
 
 	//methods
 
@@ -80,10 +90,13 @@ public class PlayerController : MonoBehaviour {
 		// sets healthbar to the initial value
 		healthBar.SetHealth (health);
 
+		spriteRenderer = transform.Find ("Sprite").GetComponent<SpriteRenderer> ();
 		weapon = transform.Find ("Weapon").GetComponent<Weapon>();
 		if (weapon == null) {
 			Debug.Log ("No player weapon.");
 		}
+
+		defaultPosition = transform.position;
 	}
 
 	// changes the speed of the player for a given amount of time(given in seconds)
@@ -108,26 +121,7 @@ public class PlayerController : MonoBehaviour {
 		_firerate = _firerate / modifier;
 	}
 
-	// damage should be given as a float between 0 and 1
-	public void TakeDamage(int damage){
-		if (damage >= health) {
-			// TODO: replace this with respawning mechanic
-			if (lives != 0) {
-				_health = maxHealth;
-				livesIcons.SetLives (lives - 1);
-				lives -= 1;
-			} else {
-				gameObject.SetActive (false);
-			}
-		} else {
-			_health -= damage;
-		}
-		healthBar.SetHealth(health);
-	}
-
-
 	private void Shoot(){
-		SpriteRenderer spriteRenderer = transform.Find ("Sprite").GetComponent<SpriteRenderer> ();
 		weapon.Shoot (spriteRenderer.bounds);
 	}
 
@@ -178,5 +172,58 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyUp ("space")) {
 			fireTimer += (1 / manualMaxFirerate - 1 / firerate);
 		}
+	}
+
+
+	// Taking damage
+
+	public void TakeDamage(int damage){
+		if (!respawnProtection) {
+			_health -= damage;
+			healthBar.SetHealth (health);
+			if (health <= 0) {
+				Die ();
+			}
+		}
+	}
+
+	private void Die() {
+		if (lives > 0) {
+			gameObject.SetActive (false);
+
+			lives -= 1;
+			livesIcons.SetLives (lives);
+
+			Invoke ("Respawn", respawnDelay);
+		} else {
+			gameObject.SetActive (false);
+			//TODO show main menu
+		}
+	}
+
+	private void Respawn() {
+		gameObject.SetActive (true);
+		_health = maxHealth;
+		transform.position = defaultPosition;
+		healthBar.SetHealth (health);
+
+		respawnProtection = true;
+		InvokeRepeating ("Flicker", 0, 1/respawnFlickerFrequency);
+		Invoke ("EndRespawnProtection", respawnProtectionDuration);
+	}
+
+	private void Flicker() {
+		Color color = spriteRenderer.color;
+		color.a = (color.a == 0) ? 1 : 0;
+		spriteRenderer.color = color;
+	}
+
+	private void EndRespawnProtection() {
+		Color color = spriteRenderer.color;
+		color.a = 1;
+		spriteRenderer.color = color;
+
+		respawnProtection = false;
+		CancelInvoke ("Flicker");
 	}
 }
