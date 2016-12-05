@@ -13,6 +13,7 @@ TagManager:
   - Weapon
   - Obstacle
   - PauseMenu
+  - Enemy
   layers:
   - Default
   - TransparentFX

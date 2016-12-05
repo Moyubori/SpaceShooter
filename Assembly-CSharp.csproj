@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\GameObjectScripts\Weapons\FanWeapon.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Weapons\StraightWeapon.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Weapons\Weapon.cs" />
+     <Compile Include="Assets\Scripts\GameObjectScripts\Weapons\WeaponSwapper.cs" />
      <Compile Include="Assets\Scripts\General\AbstractClasses.cs" />
      <Compile Include="Assets\Scripts\General\EnemyObjectPool.cs" />
      <Compile Include="Assets\Scripts\General\FollowCamera.cs" />

@@ -37,7 +37,7 @@ public class Asteroid : InflictingDamage {
 	}
 
 	void Awake(){
-		damage = 15;
+		damageOnContact = 15;
 		calculatedTranslation = ((int)Random.Range (-1, 1) * Random.value * randFactor * movementSpeed) + movementSpeed;
 		calculatedRotation = Random.Range (-1f, 1f) * randFactor * rotationSpeed;
 	}

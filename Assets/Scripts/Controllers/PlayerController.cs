@@ -132,11 +132,11 @@ public class PlayerController : MonoBehaviour {
 		translationX = Input.GetAxis ("Horizontal") * speed;
 
 		// subtract width and height of ship's sprite
-		float yBoundary = cameraReference.orthographicSize;
-		float xBoundary = yBoundary * cameraReference.aspect - boundaries.top;
-		yBoundary -= boundaries.right;
+		float yBoundary = cameraReference.orthographicSize - boundaries.right;
+		float leftBoundary = -cameraReference.orthographicSize * cameraReference.aspect - boundaries.left;
+		float rightBoundary = -boundaries.right;
 
-		if ((transform.localPosition.x > xBoundary && translationX > 0) || (transform.localPosition.x < -xBoundary && translationX < 0)) {
+		if ((transform.localPosition.x > rightBoundary && translationX > 0) || (transform.localPosition.x < leftBoundary && translationX < 0)) {
 			translationX = 0;
 		}
 		if ((transform.localPosition.y > yBoundary && translationY > 0) || (transform.localPosition.y < -yBoundary && translationY < 0)) {
@@ -149,8 +149,10 @@ public class PlayerController : MonoBehaviour {
 		// check if collision should deal damage
 		if (collider.tag == "ProjectilesEnemy" || collider.tag == "Obstacle") {
 			//Debug.Log (collider.tag);
-			TakeDamage (collider.GetComponent<InflictingDamage> ().damage);
+			TakeDamage (collider.GetComponent<InflictingDamage> ().damageOnContact);
 			collider.gameObject.SetActive (false);
+		} else if (collider.tag == "Enemy") {
+			TakeDamage (collider.GetComponent<InflictingDamage> ().damageOnContact);
 		}
 	}
 
@@ -188,16 +190,15 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void Die() {
+		lives -= 1;
 		if (lives > 0) {
 			gameObject.SetActive (false);
-
-			lives -= 1;
 			livesIcons.SetLives (lives);
 
 			Invoke ("Respawn", respawnDelay);
 		} else {
 			gameObject.SetActive (false);
-			//TODO show main menu
+			Application.LoadLevel ("main_menu");
 		}
 	}
 

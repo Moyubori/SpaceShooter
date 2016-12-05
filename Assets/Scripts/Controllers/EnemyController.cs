@@ -37,7 +37,7 @@ public class EnemyController : Enemy {
 	void OnTriggerEnter2D(Collider2D collider){
 		// check if collision should deal damage
 		if (collider.tag == "ProjectilesPlayer") {
-			TakeDamage (collider.GetComponent<Projectile> ().damage);
+			TakeDamage (collider.GetComponent<Projectile> ().damageOnContact);
 			collider.gameObject.SetActive (false);
 		}
 	}
@@ -48,8 +48,10 @@ public class EnemyController : Enemy {
 	}
 
 	void Start(){
-		weapon.projectilePool = GameObject.FindWithTag ("ObjectPools").transform.FindChild ("EnemyProjectiles").GetComponent<ObjectPool> ();
-		weapon.projectileOrigin = transform;
+		foreach (Weapon weapon in GetComponentsInChildren<Weapon>()) {
+			weapon.projectilePool = GameObject.FindWithTag ("ObjectPools").transform.FindChild ("EnemyProjectiles").GetComponent<ObjectPool> ();
+			weapon.projectileOrigin = transform;
+		}
 	}
 	
 	void Update (){

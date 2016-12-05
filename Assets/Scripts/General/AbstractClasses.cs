@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections;
 
-public abstract class Enemy : MonoBehaviour {
+public abstract class Enemy : InflictingDamage {
 
 	public int health {
 		get { return _health; }
@@ -45,10 +45,9 @@ public abstract class BackgroundController : MonoBehaviour {
 	}
 }
 
+//abstraction for object dealing damage on contact
 public abstract class InflictingDamage : MonoBehaviour {
-
-	public int damage = 10;
-
+	public int damageOnContact = 10;
 }
 
 public abstract class Event : MonoBehaviour {
