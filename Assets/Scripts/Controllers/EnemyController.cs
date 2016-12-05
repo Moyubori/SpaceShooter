@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class EnemyController : Enemy {
-	public Sprite[] sprites;
 
 	//shots fired per second
 	public float firerate {
@@ -14,22 +13,25 @@ public class EnemyController : Enemy {
 	[SerializeField]
 	private float _firerate = 0.5f;
 	private float defaultFirerate;
-	[SerializeField]
 	private float fireTimer = 0; //shooting cooldown timer
 
 	public Weapon weapon;
+	public SpriteRenderer spriteRenderer;
 
 	// use this to deal damage to this enemy
 	override public void TakeDamage (int damage){
-		_health = Mathf.Clamp (health - damage, 0, 100);
+		_health = Mathf.Clamp (health - damage, 0, defaultHealth);
 		if (health == 0) {
 			gameObject.SetActive(false);
 		}
 	}
 
+	void OnEnable() {
+		fireTimer = Random.Range (0, 1 / firerate);
+	}
+
 	void OnDisable(){
 		_health = defaultHealth;
-		fireTimer = 0;
 		}
 
 	void OnTriggerEnter2D(Collider2D collider){
@@ -43,7 +45,6 @@ public class EnemyController : Enemy {
 	void Awake(){
 		defaultHealth = health;
 		defaultFirerate = firerate;
-		weapon = transform.Find ("Weapon").GetComponent<Weapon> ();
 	}
 
 	void Start(){
@@ -54,13 +55,8 @@ public class EnemyController : Enemy {
 	void Update (){
 		fireTimer += Time.deltaTime;
 		if (fireTimer >= 1 / firerate) {
-			SpriteRenderer spriteRenderer = transform.Find ("Sprite").GetComponent<SpriteRenderer> ();
 			weapon.Shoot (spriteRenderer.bounds);
 			fireTimer = 0;
 		}
-	}
-
-	void OnEnable() {
-		Debug.Log ("Enable");
 	}
 }

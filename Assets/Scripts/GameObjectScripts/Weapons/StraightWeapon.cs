@@ -30,6 +30,21 @@ public class StraightWeapon : Weapon {
 			position += horizontalOffset;
 			projectilePool.GetInstance (position, projectileOrigin.rotation);
 			break;
+
+		case 3:
+			float offsetY = bounds.size.y * 0.07f;
+			float offsetX = bounds.extents.x * 0.2f;
+
+			projectilePool.GetInstance (position, projectileOrigin.rotation);
+			position.x -= offsetX;
+			position.y += offsetY;
+			projectilePool.GetInstance (position, projectileOrigin.rotation);
+			position.y -= 2 * offsetY;
+			projectilePool.GetInstance (position, projectileOrigin.rotation);
+			position.y += offsetY;
+			position.x -= offsetX;
+			projectilePool.GetInstance (position, projectileOrigin.rotation);
+			break;
 		}
 	}
 }

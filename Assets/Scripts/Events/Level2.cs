@@ -14,8 +14,8 @@ public class Level2 : LevelEvent {
 		TweenProperties moveUp = new LoopTween (LoopTween.Loop.reverse, new SingleTween ("2_up", flyDuration, flyDelay));
 		TweenProperties moveDown = new LoopTween (LoopTween.Loop.reverse, new SingleTween ("2_down", flyDuration, flyDelay));
 
-		spawnEnemy (enter.Clone().OffsetByY(enemyOffset), moveUp);
-		spawnEnemy (enter);
-		spawnEnemy (enter.Clone().OffsetByY(-enemyOffset), moveDown);
+		spawnEnemy (EnemyObjectPool.type_enemy2, enter.Clone().OffsetByY(enemyOffset), moveUp);
+		spawnEnemy (EnemyObjectPool.type_enemy2, enter);
+		spawnEnemy (EnemyObjectPool.type_enemy2, enter.Clone().OffsetByY(-enemyOffset), moveDown);
 	}
 }

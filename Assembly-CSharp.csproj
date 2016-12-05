@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Events\Level6.cs" />
      <Compile Include="Assets\Scripts\Events\Level7.cs" />
      <Compile Include="Assets\Scripts\Events\Level8.cs" />
+     <Compile Include="Assets\Scripts\Events\Level9.cs" />
      <Compile Include="Assets\Scripts\Events\LevelEvent.cs" />
      <Compile Include="Assets\Scripts\Events\LevelManager.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Asteroid.cs" />
@@ -73,6 +74,7 @@
      <Compile Include="Assets\Scripts\GameObjectScripts\Weapons\StraightWeapon.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Weapons\Weapon.cs" />
      <Compile Include="Assets\Scripts\General\AbstractClasses.cs" />
+     <Compile Include="Assets\Scripts\General\EnemyObjectPool.cs" />
      <Compile Include="Assets\Scripts\General\FollowCamera.cs" />
      <Compile Include="Assets\Scripts\General\ObjectBoundaries.cs" />
      <Compile Include="Assets\Scripts\General\ObjectPool.cs" />

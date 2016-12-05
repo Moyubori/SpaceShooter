@@ -26,7 +26,7 @@ public class Level4 : LevelEvent {
 				cruise = cruise.Clone().OffsetByY (-cruiseOffset);
 			}
 
-			spawnEnemy (enter, divide, cruise);
+			spawnEnemy (EnemyObjectPool.type_enemy1, enter, divide, cruise);
 		}
 	}
 }

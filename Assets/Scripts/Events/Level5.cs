@@ -34,8 +34,8 @@ public class Level5 : LevelEvent {
 
 
 
-
-			spawnEnemy (enter, cruise);	
+			EnemyType type = (left) ? EnemyObjectPool.type_enemy1 : EnemyObjectPool.type_enemy2;
+			spawnEnemy (type, enter, cruise);	
 		}
 	}	
 }

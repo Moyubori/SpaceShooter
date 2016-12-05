@@ -7,7 +7,7 @@ public abstract class Weapon : MonoBehaviour {
 	public Transform projectileOrigin;
 
 	[SerializeField]
-	protected int weaponLevel = 0;
+	public int weaponLevel = 0;
 
 	public abstract void Shoot (Bounds bounds);
 }

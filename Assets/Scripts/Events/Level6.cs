@@ -11,7 +11,7 @@ public class Level6 : LevelEvent {
 		for (int i = 0; i < enemiesToSpawn; i++) {
 			TweenProperties startDelay = new SingleTween ("6_loop", loopDuration, i * spawnInterval);
 			TweenProperties loop = new LoopTween(new SingleTween("6_loop", loopDuration));
-			spawnEnemy (startDelay, loop);
+			spawnEnemy (EnemyObjectPool.type_enemy1, startDelay, loop);
 		}
 	}	
 }

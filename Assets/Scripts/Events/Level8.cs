@@ -33,7 +33,7 @@ public class Level8 : LevelEvent {
 			TweenProperties cruiseRev = cruisePathRev.Clone ().OffsetByY (yOffset);
 
 			TweenProperties loop = new LoopTween (preCruiseDelay, cruise, postCruiseDlay, postCruiseDlay, cruiseRev, preCruiseDelay);
-			spawnEnemy (preEnterDelay, enter, postEnterDelay, loop);
+			spawnEnemy (EnemyObjectPool.type_enemy2, preEnterDelay, enter, postEnterDelay, loop);
 		}
 	}
 }

@@ -9,7 +9,8 @@ public class Level1 : LevelEvent {
 	override protected void spawnEnemies () {
 		TweenProperties enter = new SingleTween ("simpleEnter", enterDuration);
 
-		spawnEnemy (enter.Clone().OffsetByY(enemyOffset));
-		spawnEnemy (enter.Clone().OffsetByY(-enemyOffset));
+
+		spawnEnemy (EnemyObjectPool.type_enemy1, enter.Clone().OffsetByY(enemyOffset));
+		spawnEnemy (EnemyObjectPool.type_enemy1, enter.Clone().OffsetByY(-enemyOffset));
 	}	
 }

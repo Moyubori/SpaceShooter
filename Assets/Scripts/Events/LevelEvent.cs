@@ -4,6 +4,11 @@ using System.Collections.Generic;
 
 public abstract class LevelEvent : Event {
 	private List<Transform> enemies = new List<Transform>();
+	private LevelManager levelManager;
+
+	void Awake() {
+		levelManager = transform.parent.GetComponent<LevelManager> ();
+	}
 
 	override protected IEnumerator EventActions() {
 		spawnEnemies ();
@@ -13,21 +18,28 @@ public abstract class LevelEvent : Event {
 	//main method spawning all the enemies
 	protected abstract void spawnEnemies ();
 
-	//spawns at default position, which is beyond the right side of the screen
-	protected Transform spawnEnemy(params TweenProperties[] tweens) {
-		Camera cam = getLevelManager ().camera;
-		Vector3 enemyExtents = getLevelManager ().enemyPool.objectPrefab.GetComponentInChildren<SpriteRenderer> ().bounds.extents;
+	//method invoked once per enemy, spawns at given position and aplies tween
+	//spawns at default position, which is beyond the top-right corner of the screen
+	protected Transform spawnEnemy(EnemyType type, params TweenProperties[] tweens) {
+		Transform result = levelManager.enemyPool.GetInstance (type);
 
+		Camera cam = levelManager.camera;
+		Vector3 enemyExtents = result.GetComponentInChildren<SpriteRenderer> ().bounds.extents;
+		result.position = calculatePosition (cam, enemyExtents);
+		result.GetComponent<MovementController> ().QueueTweens (tweens);
+		enemies.Add (result);
+		return result;
+	}
+	private Vector3 calculatePosition(Camera cam, Vector3 enemyExtents) {
 		float cameraTop = cam.transform.position.y + cam.orthographicSize;
 		float cameraRight = cam.transform.position.x + cam.orthographicSize * cam.aspect;
-		Vector3 position = new Vector3 (cameraRight + enemyExtents.x, cameraTop + enemyExtents.y);
-
-		return spawnEnemy (position, tweens);
+		return new Vector3 (cameraRight + enemyExtents.x, cameraTop + enemyExtents.y);
 	}
-
+		
 	//method invoked once per enemy, spawns at given position and aplies tween
-	protected Transform spawnEnemy(Vector3 position, params TweenProperties[] tweens) {
-		Transform result = getLevelManager().enemyPool.GetInstance(position);
+	//spawn at specified position
+	protected Transform spawnEnemy(Vector3 position, EnemyType type, params TweenProperties[] tweens) {
+		Transform result = levelManager.enemyPool.GetInstance(type, position);
 		result.GetComponent<MovementController> ().QueueTweens (tweens);
 		enemies.Add (result);
 		return result;
@@ -48,7 +60,4 @@ public abstract class LevelEvent : Event {
 		FinishEvent();
 	}
 
-	private LevelManager getLevelManager() {
-		return transform.parent.GetComponent<LevelManager> ();
-	}
 }

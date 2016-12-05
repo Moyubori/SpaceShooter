@@ -34,7 +34,7 @@ public class Level7 : LevelEvent {
 			TweenProperties loop = new LoopTween (preUniteDelay, uniteUp, postUniteDelay, cruise, loopDelay, 
 				preUniteDelay, uniteDown, postUniteDelay, cruise, loopDelay);
 
-			spawnEnemy (enter, postEnterDelay, loop);
+			spawnEnemy (EnemyObjectPool.type_enemy1, enter, postEnterDelay, loop);
 		}
 	}	
 }

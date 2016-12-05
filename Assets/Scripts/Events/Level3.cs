@@ -15,7 +15,8 @@ public class Level3 : LevelEvent {
 			TweenProperties enter = new SingleTween ("3_enter", enterDuration, i*spawnInterval);
 			TweenProperties loop = new LoopTween(new SingleTween("3_loop", loopDuration, 0));
 
-			spawnEnemy (enter, loop);
+			EnemyType type = (i % 2 == 0) ? EnemyObjectPool.type_enemy1 : EnemyObjectPool.type_enemy2;
+			spawnEnemy (type, enter, loop);
 		}
 	}
 }
