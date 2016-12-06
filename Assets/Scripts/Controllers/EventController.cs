@@ -18,6 +18,7 @@ public class EventController : MonoBehaviour {
 		foreach(LevelEvent level in levels){
 			eventQueue.Enqueue (level);
 		}
+		Resources.FindObjectsOfTypeAll<ScoreClass> () [0].Reset ();
 
 		InvokeRepeating ("TryToLaunchNextEvent", 0, 1f);
 	}

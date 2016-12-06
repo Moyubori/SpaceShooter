@@ -10,6 +10,7 @@ public class Asteroid : InflictingDamage {
 	private float calculatedTranslation;
 	private float calculatedRotation;
 	private Transform sprite;
+	private ScoreClass scoreObject;
 
 
 	private bool enteredScreen = false;
@@ -24,6 +25,7 @@ public class Asteroid : InflictingDamage {
 	void OnTriggerEnter2D(Collider2D collider){
 		// check if collision should deal damage
 		if (collider.tag == "ProjectilesPlayer") {
+			scoreObject.AddPoints (points);
 			transform.rotation = Quaternion.Euler (0, 0, 0);
 			collider.gameObject.SetActive (false);
 			gameObject.SetActive (false);
@@ -43,6 +45,7 @@ public class Asteroid : InflictingDamage {
 	}
 
 	void Start(){
+		scoreObject = Resources.FindObjectsOfTypeAll<ScoreClass> () [0];
 		sprite = transform.GetChild (0);
 		GetComponent<Rigidbody2D> ().velocity = new Vector2(-calculatedTranslation,0);
 		//Debug.Log (GetComponent<Rigidbody2D> ().velocity);

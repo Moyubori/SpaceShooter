@@ -48,6 +48,7 @@ public abstract class BackgroundController : MonoBehaviour {
 //abstraction for object dealing damage on contact
 public abstract class InflictingDamage : MonoBehaviour {
 	public int damageOnContact = 10;
+	public int points = 100;
 }
 
 public abstract class Event : MonoBehaviour {
