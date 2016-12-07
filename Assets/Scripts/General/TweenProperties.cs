@@ -77,6 +77,11 @@ public class SingleTween : TweenProperties {
 		}
 		return this;
 	}
+
+	public System.Collections.Hashtable GetHash(){
+		Hashtable args = iTween.Hash ("path", path, "time", time, "delay", delay, "movetopath", moveToPath, "easeType", "linear");
+		return args;
+	}
 }
 
 

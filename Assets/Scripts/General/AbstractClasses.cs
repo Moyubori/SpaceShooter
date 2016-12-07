@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections;
 
 public abstract class Enemy : InflictingDamage {
 

@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/main_menu.unity
   - enabled: 1
     path: Assets/shmup.unity
+  - enabled: 1
+    path: Assets/level_complete.unity

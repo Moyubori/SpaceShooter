@@ -5,6 +5,7 @@ using System.Collections;
 public class ScoreClass : ScriptableObject {
 
 	public int totalScore;
+	public bool win = true;
 
 	// add point modifiers/combos/anything later
 	public void AddPoints(int points){
@@ -17,5 +18,6 @@ public class ScoreClass : ScriptableObject {
 
 	public void Reset(){
 		totalScore = 0;
+		win = true;
 	}
 }

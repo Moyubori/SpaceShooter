@@ -4,27 +4,37 @@ using System.Collections.Generic;
 
 public class EventController : MonoBehaviour {
 
-	private Queue<LevelEvent> eventQueue;
+	private Queue<Event> eventQueue;
 	public Transform levels;
 
-	private LevelEvent currentEvent = null;
+	public int skipEvents = 0;
+
+	private ScoreClass scoreObject;
+
+	private Event currentEvent = null;
 
 	void Awake(){
-		eventQueue = new Queue<LevelEvent> ();
+		eventQueue = new Queue<Event> ();
+		Resources.Load ("score");
 	}
 
 	void Start() {
-		LevelEvent[] levels = this.levels.GetComponentsInChildren<LevelEvent> ();
-		foreach(LevelEvent level in levels){
+		Event[] levels = this.levels.GetComponentsInChildren<Event> ();
+		foreach(Event level in levels){
 			eventQueue.Enqueue (level);
 		}
-		Resources.FindObjectsOfTypeAll<ScoreClass> () [0].Reset ();
+		scoreObject = Resources.FindObjectsOfTypeAll<ScoreClass>()[0] as ScoreClass;
+		scoreObject.Reset ();
+
+		for(int i = 0; i < skipEvents; i++) {
+			eventQueue.Dequeue ();
+		}
 
 		InvokeRepeating ("TryToLaunchNextEvent", 0, 1f);
 	}
 
 
-	public void QueueEvent(LevelEvent newEvent){
+	public void QueueEvent(Event newEvent){
 		eventQueue.Enqueue (newEvent);
 	}
 

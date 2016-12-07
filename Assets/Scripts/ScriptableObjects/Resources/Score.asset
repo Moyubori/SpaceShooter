@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: Score
   m_EditorClassIdentifier: 
   totalScore: 0
+  win: 0

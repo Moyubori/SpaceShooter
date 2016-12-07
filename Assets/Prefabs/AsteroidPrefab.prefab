@@ -114,7 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53197df021384c76aba425897f1efa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damageOnContact: 10
+  points: 50
   movementSpeed: 3
   rotationSpeed: 3
   randFactor: 0.3

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/shmup.unity
+- path: Assets/main_menu.unity
   isLoaded: 1
   isActive: 1
