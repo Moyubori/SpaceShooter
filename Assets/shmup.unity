@@ -1807,6 +1807,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 730597770}
+--- !u!1001 &744229213
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000011420813996, guid: ec55c312c1480fd4cadc0175753bb4bb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 384.5302
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011420813996, guid: ec55c312c1480fd4cadc0175753bb4bb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 181.25426
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011420813996, guid: ec55c312c1480fd4cadc0175753bb4bb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011420813996, guid: ec55c312c1480fd4cadc0175753bb4bb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011420813996, guid: ec55c312c1480fd4cadc0175753bb4bb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011420813996, guid: ec55c312c1480fd4cadc0175753bb4bb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011420813996, guid: ec55c312c1480fd4cadc0175753bb4bb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011420813996, guid: ec55c312c1480fd4cadc0175753bb4bb, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ec55c312c1480fd4cadc0175753bb4bb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &769660511
 GameObject:
   m_ObjectHideFlags: 0
@@ -4312,11 +4354,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathName: 9_attackDown
-  pathColor: {r: 0.26666668, g: 0.15294118, b: 0.011764707, a: 1}
+  pathColor: {r: 1, g: 0.5538461, b: 0, a: 1}
   nodes:
   - {x: 8, y: -6, z: 0}
-  - {x: -14, y: 6, z: 0}
-  nodeCount: 2
+  - {x: -5, y: 6, z: 0}
+  - {x: -14, y: 3, z: 0}
+  nodeCount: 3
   initialized: 1
   initialName: New Path 4
   pathVisible: 1
@@ -4332,11 +4375,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathName: 9_attackUp
-  pathColor: {r: 0.2647059, g: 0.15388379, b: 0.013624566, a: 1}
+  pathColor: {r: 1, g: 0.5586207, b: 0, a: 1}
   nodes:
   - {x: 8, y: 6, z: 0}
-  - {x: -14, y: -6, z: 0}
-  nodeCount: 2
+  - {x: -5, y: -6, z: 0}
+  - {x: -14, y: -3, z: 0}
+  nodeCount: 3
   initialized: 1
   initialName: New Path 3
   pathVisible: 1
@@ -4397,7 +4441,7 @@ MonoBehaviour:
   enterDuration: 2
   loopDelay: 1
   changeSideDuration: 6
-  attackDuration: 0.25
+  attackDuration: 0.7
 --- !u!1 &1724745626
 GameObject:
   m_ObjectHideFlags: 0
@@ -4534,7 +4578,7 @@ GameObject:
   - 114: {fileID: 1753579969}
   m_Layer: 5
   m_Name: UI
-  m_TagString: Untagged
+  m_TagString: MainHUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4945,6 +4989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1868f06285656a24e90d1097e93ee1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 0}
   enemyPrefabs:
   - {fileID: 4000014105888802, guid: fe61877c6dd3c4475be76bb2b6de0b95, type: 2}
   - {fileID: 4000011536302456, guid: 1feb13d59510f8248a7d1e3edeb1ba2e, type: 2}

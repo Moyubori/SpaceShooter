@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class EnemyObjectPool : MonoBehaviour {
+public class EnemyObjectPool : ObjectPool {
 	public static readonly int TYPE_COUNT = 3;
 
 	public static readonly EnemyType type_enemy1 = new EnemyType(0);

@@ -3,5 +3,5 @@ using System.Collections;
 
 public class LevelManager : MonoBehaviour {
 	public EnemyObjectPool enemyPool;
-	new public Camera camera;
+	public Camera camera;
 }

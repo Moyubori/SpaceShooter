@@ -5,7 +5,7 @@ public class Level9 : LevelEvent {
 	public float enterDuration = 3.0f;
 	public float loopDelay = 1.0f;
 	public float changeSideDuration = 5.0f;
-	public float attackDuration = 1.5f;
+	public float attackDuration = 1.0f;
 
 	override protected void spawnEnemies () {
 		TweenProperties enter = new SingleTween ("9_enter", enterDuration);

@@ -11,6 +11,7 @@ public abstract class Enemy : InflictingDamage {
 
 	[SerializeField]
 	protected int _health = 100;
+	public int maxHealth = 100;
 	protected int defaultHealth;
 
 	public abstract void TakeDamage (int damage);
@@ -77,9 +78,3 @@ public abstract class Event : MonoBehaviour {
 		_finished = true;
 	}
 }
-
-
-
-
-
-

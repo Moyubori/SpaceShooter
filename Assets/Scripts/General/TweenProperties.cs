@@ -27,12 +27,6 @@ public abstract class TweenProperties {
 }
 
 
-
-
-
-
-
-
 //actual tween which holding iTween data
 public class SingleTween : TweenProperties {
 	public Vector3[] path;
@@ -47,7 +41,7 @@ public class SingleTween : TweenProperties {
 		result.moveToPath = moveToPath;
 		return result;
 	}
-	public SingleTween() {}
+	public SingleTween () {}
 	public SingleTween(string pathName, float time = 1.0f, float delay = 0.0f, bool moveToPath = false) {
 		this.path = iTweenPath.GetPath(pathName);
 		this.time = time;
@@ -83,17 +77,17 @@ public class SingleTween : TweenProperties {
 		return args;
 	}
 }
-
-
-
-
-
-
-
+	
 
 //Container for SingleTweens (actually, nesting LoopTweens is possible), can work as plain or reversed loop
 public class LoopTween : TweenProperties {
-	public enum Loop {none, normal, reverse};
+
+	public enum Loop {
+		none, 
+		normal, 
+		reverse
+	};
+
 	private TweenProperties[] tweens;
 	private Loop loop;
 
@@ -168,10 +162,6 @@ public class LoopTween : TweenProperties {
 	}
 
 }
-
-
-
-
 
 
 public class DelayTween : TweenProperties {

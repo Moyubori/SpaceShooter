@@ -45,8 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FinishLevel.cs" />
-     <Compile Include="Assets\LevelCompleteButtonsController.cs" />
+     <Compile Include="Assets\BossHealthbar.cs" />
      <Compile Include="Assets\Scripts\Controllers\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Controllers\EventController.cs" />
      <Compile Include="Assets\Scripts\Controllers\FloatingBackgroundController.cs" />
@@ -58,6 +57,7 @@
      <Compile Include="Assets\Scripts\Controllers\PauseController.cs" />
      <Compile Include="Assets\Scripts\Controllers\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Controllers\ScrollBackground.cs" />
+     <Compile Include="Assets\Scripts\Events\FinishLevel.cs" />
      <Compile Include="Assets\Scripts\Events\Level1.cs" />
      <Compile Include="Assets\Scripts\Events\Level2.cs" />
      <Compile Include="Assets\Scripts\Events\Level3.cs" />
@@ -69,11 +69,12 @@
      <Compile Include="Assets\Scripts\Events\Level9.cs" />
      <Compile Include="Assets\Scripts\Events\LevelEvent.cs" />
      <Compile Include="Assets\Scripts\Events\LevelManager.cs" />
-     <Compile Include="Assets\Scripts\GameData.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Asteroid.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\AsteroidSpawner.cs" />
+     <Compile Include="Assets\Scripts\GameObjectScripts\LevelCompleteButtonsController.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\PointsCounter.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\GameObjectScripts\SplashText.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Weapons\FanWeapon.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Weapons\StraightWeapon.cs" />
      <Compile Include="Assets\Scripts\GameObjectScripts\Weapons\Weapon.cs" />
@@ -81,12 +82,12 @@
      <Compile Include="Assets\Scripts\General\AbstractClasses.cs" />
      <Compile Include="Assets\Scripts\General\EnemyObjectPool.cs" />
      <Compile Include="Assets\Scripts\General\FollowCamera.cs" />
+     <Compile Include="Assets\Scripts\General\GameData.cs" />
      <Compile Include="Assets\Scripts\General\ObjectBoundaries.cs" />
      <Compile Include="Assets\Scripts\General\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\General\TweenProperties.cs" />
      <Compile Include="Assets\Scripts\General\iTween.cs" />
      <Compile Include="Assets\Scripts\General\iTweenPath.cs" />
-     <Compile Include="Assets\SplashText.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
