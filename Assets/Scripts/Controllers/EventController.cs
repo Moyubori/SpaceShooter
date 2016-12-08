@@ -9,13 +9,10 @@ public class EventController : MonoBehaviour {
 
 	public int skipEvents = 0;
 
-	private ScoreClass scoreObject;
-
 	private Event currentEvent = null;
 
 	void Awake(){
 		eventQueue = new Queue<Event> ();
-		Resources.Load ("score");
 	}
 
 	void Start() {
@@ -23,8 +20,7 @@ public class EventController : MonoBehaviour {
 		foreach(Event level in levels){
 			eventQueue.Enqueue (level);
 		}
-		scoreObject = Resources.FindObjectsOfTypeAll<ScoreClass>()[0] as ScoreClass;
-		scoreObject.Reset ();
+		GameData.gameData.Reset ();
 
 		for(int i = 0; i < skipEvents; i++) {
 			eventQueue.Dequeue ();

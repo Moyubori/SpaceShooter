@@ -16,7 +16,6 @@ public class EnemyController : Enemy {
 	private float _firerate = 0.5f;
 	private float defaultFirerate;
 	private float fireTimer = 0; //shooting cooldown timer
-	private ScoreClass scoreObject;
 
 	public Weapon weapon;
 	public SpriteRenderer spriteRenderer;
@@ -25,7 +24,7 @@ public class EnemyController : Enemy {
 	override public void TakeDamage (int damage){
 		_health = Mathf.Clamp (health - damage, 0, defaultHealth);
 		if (health == 0) {
-			scoreObject.AddPoints (points);
+			GameData.gameData.score = points;
 			gameObject.SetActive(false);
 		}
 	}
@@ -52,7 +51,6 @@ public class EnemyController : Enemy {
 	}
 
 	void Start(){
-		scoreObject = Resources.FindObjectsOfTypeAll<ScoreClass> ()[0];
 		foreach (Weapon weapon in GetComponentsInChildren<Weapon>()) {
 			weapon.projectilePool = GameObject.FindWithTag ("ObjectPools").transform.FindChild ("EnemyProjectiles").GetComponent<ObjectPool> ();
 			weapon.projectileOrigin = transform;

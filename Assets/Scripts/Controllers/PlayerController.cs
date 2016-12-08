@@ -65,7 +65,6 @@ public class PlayerController : MonoBehaviour {
 	public float respawnFlickerFrequency = 8.0f;
 	private Vector3 defaultPosition;
 	private bool respawnProtection = false; //is player under respawn protection
-	private ScoreClass scoreObject;
 
 
 
@@ -96,11 +95,6 @@ public class PlayerController : MonoBehaviour {
 		weapon = transform.Find ("Weapon").GetComponent<Weapon>();
 		if (weapon == null) {
 			Debug.Log ("No player weapon.");
-		}
-		try{
-			scoreObject = Resources.FindObjectsOfTypeAll<ScoreClass> () [0];
-		} catch(IndexOutOfRangeException e){
-			scoreObject = Resources.Load ("score") as ScoreClass;
 		}
 
 		defaultPosition = transform.position;
@@ -204,7 +198,7 @@ public class PlayerController : MonoBehaviour {
 
 			Invoke ("Respawn", respawnDelay);
 		} else {
-			scoreObject.win = false;
+			GameData.gameData.winLevel = false;
 			gameObject.SetActive (false);
 			Application.LoadLevel ("level_complete");
 		}
