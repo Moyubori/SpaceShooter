@@ -12,8 +12,10 @@ public class BossHealthbar : MonoBehaviour {
 		boss = transform.parent.GetComponent<EnemyController> ();
 
 		transform.parent = GameObject.FindGameObjectWithTag ("MainHUD").transform;
-		GetComponent<RectTransform> ().anchoredPosition = transform.parent.GetComponent<RectTransform> ().anchoredPosition;
-		GetComponent<RectTransform> ().localScale = Vector3.one;
+		RectTransform rect = GetComponent<RectTransform> ();
+		rect.sizeDelta = transform.parent.GetComponent<RectTransform> ().sizeDelta;
+		rect.localScale = Vector3.one;
+		rect.anchoredPosition = new Vector2(rect.sizeDelta.x/2,rect.sizeDelta.y/2);
 
 	}
 
