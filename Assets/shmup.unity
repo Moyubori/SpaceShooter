@@ -4114,7 +4114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels: {fileID: 1686259656}
-  skipEvents: 0
+  skipEvents: 8
 --- !u!1 &1676251299
 GameObject:
   m_ObjectHideFlags: 0

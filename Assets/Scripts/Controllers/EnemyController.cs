@@ -19,6 +19,7 @@ public class EnemyController : Enemy {
 
 	public Weapon weapon;
 	public SpriteRenderer spriteRenderer;
+	public ParticleSystem explosion;
 
 	// use this to deal damage to this enemy
 	override public void TakeDamage (int damage){
@@ -35,7 +36,9 @@ public class EnemyController : Enemy {
 
 	void OnDisable(){
 		_health = defaultHealth;
-		}
+		ParticleSystem p = Instantiate (explosion);
+		p.transform.position = transform.position;
+	}
 
 	void OnTriggerEnter2D(Collider2D collider){
 		// check if collision should deal damage

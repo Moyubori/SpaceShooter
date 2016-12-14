@@ -378,6 +378,8 @@ MonoBehaviour:
   _firerate: 3
   weapon: {fileID: 114000013106383262}
   spriteRenderer: {fileID: 212000014120573698}
+  explosion: {fileID: 198000012252052414, guid: 034bbe6e40d4b402cb48898e461c4030,
+    type: 2}
 --- !u!114 &114000013905487448
 MonoBehaviour:
   m_ObjectHideFlags: 1
