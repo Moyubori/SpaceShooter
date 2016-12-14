@@ -36,8 +36,10 @@ public class EnemyController : Enemy {
 
 	void OnDisable(){
 		_health = defaultHealth;
-		ParticleSystem p = Instantiate (explosion);
-		p.transform.position = transform.position;
+		if (explosion != null) {
+			ParticleSystem p = Instantiate (explosion);
+			p.transform.position = transform.position;
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){

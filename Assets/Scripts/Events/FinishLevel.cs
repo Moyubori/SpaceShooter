@@ -19,6 +19,8 @@ public class FinishLevel : Event {
 		yield return new WaitForSeconds (5.0f);
 		Application.LoadLevel ("level_complete");
 
+		GameData.gameData.winLevel = true;
+
 		FinishEvent ();
 	}
 
